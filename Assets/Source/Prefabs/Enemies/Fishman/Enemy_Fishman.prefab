@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9182528761879642226}
   - component: {fileID: 1137008318}
   - component: {fileID: 8255020704480073526}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_Fishman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 75c1b5f7cae05e64cac1398f81ed16fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.64, y: 0.68}
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef26ce29af24a04fae1a589e8a5d2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _path: {fileID: 6649300277229579156, guid: c7e23ac392a11ba4daa5553f467d9746, type: 3}
+  _path: {fileID: 0}
   _speed: 1.75
 --- !u!114 &8255020704480073526
 MonoBehaviour:

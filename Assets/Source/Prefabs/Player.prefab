@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 50
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4898,10 +4898,11 @@ GameObject:
   - component: {fileID: 7261871043424217455}
   - component: {fileID: 7261871043424217454}
   - component: {fileID: 7261871043424217453}
-  - component: {fileID: 7261871043424217448}
   - component: {fileID: 1758422158}
   - component: {fileID: 1758422157}
   - component: {fileID: 7522166999704292517}
+  - component: {fileID: 8366808883305667403}
+  - component: {fileID: 7261871043424217448}
   - component: {fileID: 6904751912028059332}
   - component: {fileID: 7346831890403311475}
   m_Layer: 0
@@ -4998,22 +4999,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7261871043424217448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7261871043424217452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49a97107fd657bd44bd346ef8316d310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 3.5
-  _jumpForce: 5.5
-  _groundDetector: {fileID: 7346831890403311475}
-  _dustParticle: {fileID: 0}
 --- !u!50 &1758422158
 Rigidbody2D:
   serializedVersion: 4
@@ -5073,6 +5058,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81a245987f425d49ab268fb16d01408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coin: {fileID: 7032593408931779550, guid: 5ac37e9438e0766449460da7668b47cc, type: 3}
+--- !u!114 &8366808883305667403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261871043424217452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67116bf773187ca4882db9330d72d0a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MaxHealth>k__BackingField: 0
+--- !u!114 &7261871043424217448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261871043424217452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a97107fd657bd44bd346ef8316d310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3.5
+  _jumpForce: 5.5
+  _groundDetector: {fileID: 7346831890403311475}
+  _dustParticle: {fileID: 5324349954098441775}
 --- !u!114 &6904751912028059332
 MonoBehaviour:
   m_ObjectHideFlags: 0
