@@ -17157,12 +17157,10 @@ GameObject:
   - component: {fileID: 7261871043424217450}
   - component: {fileID: 7261871043424217449}
   - component: {fileID: 910644347034911041}
-  - component: {fileID: 1214768367449527983}
   - component: {fileID: 1758422156}
   - component: {fileID: 4257522854969490208}
   - component: {fileID: 86247412740502167}
   - component: {fileID: 976728709570339564}
-  - component: {fileID: 1758422157}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -17270,35 +17268,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3.5
-  _jumpForce: 5.5
+  _jumpVelocity: 4
+  _gravityScale: 1
+  _fallingGravityScale: 1.8
+  _pressedButtonTimer: 0.3
   _groundDetector: {fileID: 86247412740502167}
   _dustParticle: {fileID: 3252932843027178443}
---- !u!61 &1758422157
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1758422152}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0050543547, y: -0.03493455}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.58, y: 0.58}
-    newSize: {x: 0.58, y: 0.58}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.40141416, y: 0.4948703}
-  m_EdgeRadius: 0
 --- !u!4 &1784793833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2307066460043481287, guid: 848d9b664f9d5094394d578565490e17, type: 3}
@@ -18574,19 +18549,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1214768367449527983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1758422152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67116bf773187ca4882db9330d72d0a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 2
 --- !u!1001 &1839532466732599497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24136,7 +24098,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

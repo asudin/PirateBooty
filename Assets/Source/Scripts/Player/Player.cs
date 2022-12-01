@@ -1,13 +1,12 @@
 using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Animator), typeof(AudioSource), typeof(PlayerHealth))]
+[RequireComponent(typeof(Animator), typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private Coin _coin;
 
     private int _walletPlayer = 0;
-    private PlayerHealth _health;
     [SerializeField] private Animator _animator;
     [SerializeField] private AudioSource _dieSound;
 
@@ -17,7 +16,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        _health = GetComponent<PlayerHealth>();
         _animator = GetComponent<Animator>();
         _dieSound = GetComponent<AudioSource>();
     }
