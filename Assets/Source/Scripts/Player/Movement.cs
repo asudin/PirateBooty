@@ -68,7 +68,7 @@ public class Movement : MonoBehaviour
     private void Jump(float jumpForce)
     {
         _animator.SetTrigger("Jump");
-        PlayDust();
+        PlayDust(_dustParticle);
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
     }
 
@@ -81,8 +81,8 @@ public class Movement : MonoBehaviour
             _renderer.flipX = true;
     }
 
-    private void PlayDust()
+    private void PlayDust(ParticleSystem jumpParticles)
     {
-        _dustParticle.Play();
+        jumpParticles.Play();
     }
 }
