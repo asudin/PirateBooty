@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6131387103538365592}
   - component: {fileID: 5347328821395448141}
   - component: {fileID: 242299068}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_Big_Pirate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,5 +190,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef26ce29af24a04fae1a589e8a5d2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _path: {fileID: 1431404450541676231, guid: 7a518785193c96a4a8679c42edb7a3de, type: 3}
+  _path: {fileID: 0}
   _speed: 1
