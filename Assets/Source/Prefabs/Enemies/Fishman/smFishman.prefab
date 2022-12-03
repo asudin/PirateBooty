@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1137008316}
   - component: {fileID: 4540739064099876254}
   - component: {fileID: 9182528761879642226}
-  - component: {fileID: 1137008318}
   - component: {fileID: 8255020704480073526}
   m_Layer: 7
   m_Name: smFishman
@@ -33,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1417725477532620238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -179,20 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84018011b1d1aef46add3537d9b954b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1137008318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417725477532620238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ef26ce29af24a04fae1a589e8a5d2eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _path: {fileID: 0}
-  _speed: 1.75
+  _enemyData: {fileID: 11400000, guid: 7c38852f82a06ad45a54e6d7a847a4aa, type: 2}
 --- !u!114 &8255020704480073526
 MonoBehaviour:
   m_ObjectHideFlags: 0
