@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyName: Bald Pirate
   Health: 2
-  Speed: 2
+  Speed: 3
   IsEnraged: 0
   _enemyPrefab: {fileID: 6087170046928405456, guid: 848d9b664f9d5094394d578565490e17, type: 3}

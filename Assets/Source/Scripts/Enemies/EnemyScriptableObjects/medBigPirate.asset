@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyName: 
   Health: 4
-  Speed: 1
+  Speed: 2
   IsEnraged: 0
   _enemyPrefab: {fileID: 4605780586848494012, guid: 7fd20e58cba094c4f95871ff6584d92f, type: 3}

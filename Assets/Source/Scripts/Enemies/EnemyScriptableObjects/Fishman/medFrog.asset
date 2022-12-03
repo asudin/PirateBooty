@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyName: medFrog
   Health: 1
-  Speed: 2
+  Speed: 3.5
   IsEnraged: 0
   _enemyPrefab: {fileID: 1417725477532620238, guid: dce961400dcf67249abf1b66aaf5de06, type: 3}
