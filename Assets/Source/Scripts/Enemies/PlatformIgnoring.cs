@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlatformIgnoring : MonoBehaviour
 {
-    private BoxCollider2D _enemyCollider;
+    private EdgeCollider2D _enemyCollider;
     private BoxCollider2D _platformCollider;
 
     private void Awake()
     {
-        _enemyCollider = GetComponent<BoxCollider2D>();
+        _enemyCollider = GetComponent<EdgeCollider2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
