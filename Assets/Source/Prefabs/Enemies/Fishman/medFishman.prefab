@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 6618979150842074299}
   - component: {fileID: 8133408002587518092}
   - component: {fileID: 1137008314}
-  - component: {fileID: 1137008317}
+  - component: {fileID: 7266711566994925422}
   - component: {fileID: 1137008316}
   - component: {fileID: 4540739064099876254}
   - component: {fileID: 9182528761879642226}
-  - component: {fileID: 8255020704480073526}
   - component: {fileID: 6399946305442563674}
   - component: {fileID: 7180429558574066154}
   m_Layer: 7
@@ -112,8 +111,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &1137008317
-BoxCollider2D:
+--- !u!60 &7266711566994925422
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -125,7 +124,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0031570196, y: -0.04893309}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -135,9 +134,20 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.23590636, y: 0.5631918}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.07346794, y: 0.25783435}
+      - {x: -0.105651155, y: 0.2134328}
+      - {x: -0.10577425, y: -0.25707805}
+      - {x: -0.07459468, y: -0.3377817}
+      - {x: -0.041696694, y: -0.3376005}
+      - {x: -0.038857598, y: -0.27426916}
+      - {x: 0.040047653, y: -0.27474812}
+      - {x: 0.07108425, y: -0.3414694}
+      - {x: 0.11345039, y: -0.34221834}
+      - {x: 0.10169581, y: -0.10759049}
+      - {x: 0.10180688, y: 0.21059582}
+      - {x: 0.07130231, y: 0.25561604}
 --- !u!50 &1137008316
 Rigidbody2D:
   serializedVersion: 4
@@ -183,19 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84018011b1d1aef46add3537d9b954b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyData: {fileID: 11400000, guid: 7c38852f82a06ad45a54e6d7a847a4aa, type: 2}
---- !u!114 &8255020704480073526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417725477532620238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15298f58a7b4eba49ab81ebd5e0cdd83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _enemyData: {fileID: 11400000, guid: 01dd80fd6f74bf64b8209dcfa7e367cf, type: 2}
 --- !u!114 &6399946305442563674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +214,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417725477532620238}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c6a8cf88594fe1489a1e335cea698d0, type: 3}
   m_Name: 

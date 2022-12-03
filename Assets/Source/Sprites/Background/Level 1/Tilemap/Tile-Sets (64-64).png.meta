@@ -2773,12 +2773,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: 2, y: 16}
-        - {x: 2, y: 4}
-        - {x: -2, y: 4}
-        - {x: -2, y: -10}
+      - - {x: 9, y: -10}
         - {x: 16, y: -10}
         - {x: 16, y: 16}
+        - {x: 9, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 5e06c2e14b5ab2220800000000000000
@@ -2844,10 +2842,8 @@ TextureImporter:
       physicsShape:
       - - {x: -16, y: 16}
         - {x: -16, y: -10}
-        - {x: -2, y: -10}
-        - {x: -2, y: 4}
-        - {x: 3, y: 4}
-        - {x: 3, y: 16}
+        - {x: -6, y: -10}
+        - {x: -6, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 0e59c6290a601bd10800000000000000
