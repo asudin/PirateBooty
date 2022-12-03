@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: smFrog
   m_EditorClassIdentifier: 
   _enemyName: smFrog
-  Health: 2
-  Speed: 2
+  Health: 1
+  Speed: 4
   IsEnraged: 0
-  _enemyPrefab: {fileID: 0}
+  _enemyPrefab: {fileID: 1417725477532620238, guid: e1bba9a105d03f24cb47bd272f5b2302, type: 3}
