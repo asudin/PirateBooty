@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class MoveState : State
 {
-    private float _directionX;
+    private float _directionX = -1f;
     private float _speed;
     private bool _isFacingRight = false;
     private Enemy _enemy;
@@ -20,7 +20,6 @@ public class MoveState : State
         _enemy = GetComponent<Enemy>();
         _speed = _enemy.EnemyData.Speed;
         _localScale = transform.localScale;
-        _directionX = -1f;
     }
 
     private void FixedUpdate()
@@ -42,7 +41,7 @@ public class MoveState : State
             isFacingDirection = false;
 
         var xAxisDirection = -1f;
-        if (((isFacingDirection) && (localScale.x < 0)) || ((!isFacingDirection) && (localScale.x > 0)))
+        if ((isFacingDirection && localScale.x < 0) || (!isFacingDirection && localScale.x > 0))
             localScale.x *= xAxisDirection;
 
         transform.localScale = localScale;
@@ -52,8 +51,6 @@ public class MoveState : State
     {
         var xAxisDirection = -1f;
         if (collision.GetComponent<Wall>())
-        {
             _directionX *= xAxisDirection;
-        }
     }
 }

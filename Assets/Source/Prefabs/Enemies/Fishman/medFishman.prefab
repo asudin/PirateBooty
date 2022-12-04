@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 6618979150842074299}
   - component: {fileID: 8133408002587518092}
   - component: {fileID: 1137008314}
-  - component: {fileID: 7266711566994925422}
   - component: {fileID: 1137008316}
   - component: {fileID: 4540739064099876254}
   - component: {fileID: 9182528761879642226}
   - component: {fileID: 6399946305442563674}
   - component: {fileID: 7180429558574066154}
+  - component: {fileID: 5188015795035822139}
   m_Layer: 7
   m_Name: medFishman
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 1417725477532620238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,43 +111,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!60 &7266711566994925422
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417725477532620238}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.68}
-    newSize: {x: 0.64, y: 0.68}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.07346794, y: 0.25783435}
-      - {x: -0.105651155, y: 0.2134328}
-      - {x: -0.10577425, y: -0.25707805}
-      - {x: -0.07459468, y: -0.3377817}
-      - {x: -0.041696694, y: -0.3376005}
-      - {x: -0.038857598, y: -0.27426916}
-      - {x: 0.040047653, y: -0.27474812}
-      - {x: 0.07108425, y: -0.3414694}
-      - {x: 0.11345039, y: -0.34221834}
-      - {x: 0.10169581, y: -0.10759049}
-      - {x: 0.10180688, y: 0.21059582}
-      - {x: 0.07130231, y: 0.25561604}
 --- !u!50 &1137008316
 Rigidbody2D:
   serializedVersion: 4
@@ -220,3 +183,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions: []
+--- !u!70 &5188015795035822139
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417725477532620238}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.000000014901161, y: -0.101457894}
+  m_Size: {x: 0.44091555, y: 1.0638524}
+  m_Direction: 0
