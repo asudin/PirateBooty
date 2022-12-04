@@ -3945,6 +3945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 918033830}
   - component: {fileID: 918033832}
+  - component: {fileID: 918033833}
   m_Layer: 9
   m_Name: BotSmallPlatformRight
   m_TagString: Untagged
@@ -3994,6 +3995,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 0.88}
   m_EdgeRadius: 0
+--- !u!114 &918033833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918033829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82486f3817aa7744ca9eb46b064d3ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &951960740
 GameObject:
   m_ObjectHideFlags: 0
@@ -19049,6 +19062,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1396444133}
   - component: {fileID: 1396444137}
+  - component: {fileID: 1396444138}
   m_Layer: 9
   m_Name: woodenPlatformRight
   m_TagString: Untagged
@@ -19102,6 +19116,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.42, y: 0.23000002}
   m_EdgeRadius: 0
+--- !u!114 &1396444138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396444132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82486f3817aa7744ca9eb46b064d3ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1404083135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19269,6 +19295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1523174634}
   - component: {fileID: 1523174636}
+  - component: {fileID: 1523174637}
   m_Layer: 9
   m_Name: Bot Platform
   m_TagString: Untagged
@@ -19319,6 +19346,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.902697, y: 0.68}
   m_EdgeRadius: 0
+--- !u!114 &1523174637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523174633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82486f3817aa7744ca9eb46b064d3ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1532156201
 GameObject:
   m_ObjectHideFlags: 0
@@ -19413,6 +19452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1609094358}
   - component: {fileID: 1609094361}
+  - component: {fileID: 1609094362}
   m_Layer: 9
   m_Name: Bot Platform (1)
   m_TagString: Untagged
@@ -19463,6 +19503,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.879438, y: 0.68}
   m_EdgeRadius: 0
+--- !u!114 &1609094362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609094357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82486f3817aa7744ca9eb46b064d3ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1667333142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20052,10 +20104,11 @@ GameObject:
   - component: {fileID: 1758422154}
   - component: {fileID: 1758422153}
   - component: {fileID: 7261871043424217450}
-  - component: {fileID: 7261871043424217451}
   - component: {fileID: 910644347034911041}
   - component: {fileID: 1758422156}
   - component: {fileID: 1758422157}
+  - component: {fileID: 7261871043424217452}
+  - component: {fileID: 7261871043424217453}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -20164,13 +20217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678585fd1aacc2e42884bae3a445ddbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundCheck: {fileID: 7748019832782018820}
-  _groundCheckRadius: 0.05
   _speed: 4
   _jumpForce: 10
-  _collisionMask:
-    serializedVersion: 2
-    m_Bits: 512
   _dustParticle: {fileID: 3252932843027178443}
 --- !u!82 &1758422157
 AudioSource:
@@ -20651,6 +20699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834936395}
   - component: {fileID: 1834936397}
+  - component: {fileID: 1834936398}
   m_Layer: 9
   m_Name: BotSmallPlatformLeft
   m_TagString: Untagged
@@ -20700,6 +20749,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 0.88}
   m_EdgeRadius: 0
+--- !u!114 &1834936398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834936394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82486f3817aa7744ca9eb46b064d3ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1888251719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21388,6 +21449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2119843936}
   - component: {fileID: 2119843940}
+  - component: {fileID: 2119843941}
   m_Layer: 9
   m_Name: woodenPlatformLeft
   m_TagString: Untagged
@@ -21441,6 +21503,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.42, y: 0.23000002}
   m_EdgeRadius: 0
+--- !u!114 &2119843941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119843935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82486f3817aa7744ca9eb46b064d3ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &470430922425065527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21525,7 +21599,7 @@ GameObject:
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &910644347034911041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26704,8 +26778,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &7261871043424217451
-BoxCollider2D:
+--- !u!114 &7261871043424217452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758422152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7a918eea9637b41a0c58521725cdcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &7261871043424217453
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -26713,11 +26799,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 1758422152}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: aaa9d1efb65de2346bb431dda7c5e36c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08163762, y: -0.08407438}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -26727,9 +26813,27 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6799226, y: 0.9918511}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.24128044, y: 0.4095568}
+      - {x: -0.065221824, y: 0.40632558}
+      - {x: -0.1861485, y: 0.31300545}
+      - {x: -0.18504429, y: -0.046816826}
+      - {x: -0.2722965, y: -0.14898466}
+      - {x: -0.2722965, y: -0.33389205}
+      - {x: -0.20327127, y: -0.37822706}
+      - {x: -0.19534636, y: -0.57717586}
+      - {x: -0.10529041, y: -0.57770324}
+      - {x: -0.037193775, y: -0.4644866}
+      - {x: 0.19281435, y: -0.4625454}
+      - {x: 0.20335865, y: -0.57910275}
+      - {x: 0.28685698, y: -0.58}
+      - {x: 0.35136935, y: -0.5158421}
+      - {x: 0.3589358, y: -0.3785014}
+      - {x: 0.43441153, y: -0.3356912}
+      - {x: 0.436296, y: -0.15149403}
+      - {x: 0.3664422, y: -0.10106492}
+      - {x: 0.36433452, y: 0.29946813}
 --- !u!1001 &7697860833915660932
 PrefabInstance:
   m_ObjectHideFlags: 0
