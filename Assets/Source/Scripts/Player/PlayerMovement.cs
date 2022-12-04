@@ -7,13 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
     private Animator _animator;
+    private GroundDetector _groundDetector;
 
     [Header("Movement Configuration")]
-    [SerializeField] private Transform _groundCheck;
-    [SerializeField] private float _groundCheckRadius = 0.05f;
     [SerializeField] private float _speed = 2f;
     [SerializeField] private float _jumpForce = 6f;
-    [SerializeField] private LayerMask _collisionMask;
     [SerializeField] private ParticleSystem _dustParticle;
 
     private static class AnimatorPlayerController { public static class Params { public const string Speed = nameof(Speed); } }
@@ -22,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _groundDetector = GetComponent<GroundDetector>();
     }
 
     private void Update()
@@ -29,26 +28,18 @@ public class PlayerMovement : MonoBehaviour
         var horizontalInput = Input.GetAxisRaw("Horizontal");
         var jumpInput = Input.GetButton("Jump");
         var jumpInputReleased = Input.GetButtonUp("Jump");
-        const string Grounded = "isGrounded";
+        var isGrounded = _groundDetector.IsGrounded;
+        const string groundedState = "isGrounded";
 
         Move(horizontalInput, _speed);
-
-        if (jumpInput && IsGrounded())
+        if (jumpInput && isGrounded)
             Jump(_jumpForce);
 
         if (jumpInputReleased && _rigidbody.velocity.y > 0)
             _rigidbody.velocity = new Vector2(-_rigidbody.velocity.x, 0);
 
         if (horizontalInput != 0)
-        {
-            _animator.SetBool(Grounded, IsGrounded());
-            transform.localScale = new Vector3(Mathf.Sign(horizontalInput), 1, 1);
-        }
-    }
-
-    private bool IsGrounded()
-    {
-        return Physics2D.OverlapCircle(_groundCheck.position, _groundCheckRadius, _collisionMask);
+            InstantFall(groundedState, horizontalInput, isGrounded);
     }
 
     private void Move(float horizontalMovement, float speed)
@@ -62,6 +53,12 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetTrigger("Jump");
         PlayDust(_dustParticle);
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
+    }
+
+    private void InstantFall(string groundedState, float horizontalMovement, bool isGrounded)
+    {
+        _animator.SetBool(groundedState, isGrounded);
+        transform.localScale = new Vector3(Mathf.Sign(horizontalMovement), 1, 1);
     }
 
     private void PlayDust(ParticleSystem jumpParticles)
