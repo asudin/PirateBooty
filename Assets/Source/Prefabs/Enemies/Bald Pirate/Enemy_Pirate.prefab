@@ -12,11 +12,13 @@ GameObject:
   - component: {fileID: 4879946601809827952}
   - component: {fileID: 1784793825}
   - component: {fileID: 1784793827}
+  - component: {fileID: 2351261105168901020}
   - component: {fileID: 3440709089727402012}
   - component: {fileID: 278094922539553241}
   - component: {fileID: 1934520779194398544}
   - component: {fileID: -9191280920934963083}
-  - component: {fileID: 2351261105168901020}
+  - component: {fileID: -4182498764821666589}
+  - component: {fileID: 1225135604798005571}
   m_Layer: 7
   m_Name: Enemy_Pirate
   m_TagString: Untagged
@@ -132,6 +134,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &2351261105168901020
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6087170046928405456}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06161067, y: -0.094142735}
+  m_Size: {x: 0.569213, y: 0.9202074}
+  m_Direction: 0
 --- !u!114 &3440709089727402012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,20 +200,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6a8cf88594fe1489a1e335cea698d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitions: []
---- !u!70 &2351261105168901020
-CapsuleCollider2D:
+  _transitions:
+  - {fileID: -4182498764821666589}
+--- !u!114 &-4182498764821666589
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6087170046928405456}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.06161067, y: -0.094142735}
-  m_Size: {x: 0.569213, y: 0.9202074}
-  m_Direction: 0
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81415f0db17f0e9429822e19f50aa07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetState: {fileID: 1225135604798005571}
+--- !u!114 &1225135604798005571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6087170046928405456}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8166d6c5a4b0447b6b211aa507c711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitions: []
