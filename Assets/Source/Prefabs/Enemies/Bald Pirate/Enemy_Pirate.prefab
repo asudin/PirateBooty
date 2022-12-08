@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 561ecf8e16b79ae43a966ad007b56b30, type: 2}
+  _enragedVariant: {fileID: 278094922539553241, guid: 5e7ae8b257291e64c9806d7bd143a2e0, type: 3}
 --- !u!114 &1934520779194398544
 MonoBehaviour:
   m_ObjectHideFlags: 0

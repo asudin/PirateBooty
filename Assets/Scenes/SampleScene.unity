@@ -321,7 +321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &302422797
 Transform:
   m_ObjectHideFlags: 0
@@ -1083,8 +1083,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488138852}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19000006, y: -5.75, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.2580534, y: -11.549162, z: -1.500971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1351,8 +1351,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645218810}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31, y: 0.16, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.75805336, y: -5.639162, z: -1.500971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1457,7 +1457,6 @@ GameObject:
   - component: {fileID: 682129486}
   - component: {fileID: 682129485}
   - component: {fileID: 682129484}
-  - component: {fileID: 682129487}
   m_Layer: 0
   m_Name: Borders
   m_TagString: Untagged
@@ -3544,18 +3543,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!114 &682129487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682129480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82486f3817aa7744ca9eb46b064d3ad0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &694479731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1082708884042067275, guid: 9c199a52a50360041b028c296ca30f49, type: 3}
@@ -3725,8 +3712,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764150513}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0680534, y: -5.799162, z: -1.500971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3767,8 +3754,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770070463}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.56, y: -2.25, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.4919467, y: -8.049162, z: -1.500971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4632,7 +4619,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4652,7 +4639,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 5
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4759,18 +4746,18 @@ Tilemap:
     m_Data: {fileID: 8168963366571298799, guid: 0e0bde471974a5d418784bd2455e5f65, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -3002158447552789824, guid: 0e0bde471974a5d418784bd2455e5f65, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 298999830111662555, guid: 0e0bde471974a5d418784bd2455e5f65, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -4728326983764639684, guid: 0e0bde471974a5d418784bd2455e5f65, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -6641603850475182030, guid: 0e0bde471974a5d418784bd2455e5f65, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -4728326983764639684, guid: 0e0bde471974a5d418784bd2455e5f65, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 298999830111662555, guid: 0e0bde471974a5d418784bd2455e5f65, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -3535224900865884716, guid: 0e0bde471974a5d418784bd2455e5f65, type: 3}
   - m_RefCount: 6
@@ -7702,8 +7689,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116360957}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.94, y: -2.84, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.0080533, y: -8.639162, z: -1.500971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7878,7 +7865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1315512986
 Transform:
   m_ObjectHideFlags: 0
@@ -7923,8 +7910,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343641016}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.81, y: -5.75, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.7419467, y: -11.549162, z: -1.500971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7954,8 +7941,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349303964}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.31, y: -0.32, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.2419467, y: -6.119162, z: -1.500971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20146,9 +20133,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549305f01197c2f439f7397d179847d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coindSpawnInterval: 6
   _coinSpawnPoints: {fileID: 764150516}
-  _enemySpawnPoints: {fileID: 1735734311}
   _coinPrefab: {fileID: 7032593408931779550, guid: 5ac37e9438e0766449460da7668b47cc, type: 3}
+  _enemySpawnInterval: 3
+  _enemySpawnPoints: {fileID: 1735734311}
   _enemyPrefabs:
   - {fileID: 9182528761879642226, guid: dce961400dcf67249abf1b66aaf5de06, type: 3}
   - {fileID: 278094922539553241, guid: 848d9b664f9d5094394d578565490e17, type: 3}
@@ -20457,12 +20446,12 @@ GameObject:
   - component: {fileID: 1758422155}
   - component: {fileID: 1758422154}
   - component: {fileID: 1758422153}
+  - component: {fileID: 7261871043424217453}
   - component: {fileID: 7261871043424217450}
   - component: {fileID: 910644347034911041}
   - component: {fileID: 1758422156}
-  - component: {fileID: 1758422157}
   - component: {fileID: 7261871043424217452}
-  - component: {fileID: 7261871043424217453}
+  - component: {fileID: 1758422157}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged

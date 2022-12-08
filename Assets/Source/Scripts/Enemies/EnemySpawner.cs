@@ -27,6 +27,20 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(CreateEnemies(spawningInterval, _enemyPrefab));
     }
 
+    private void SpawnEnragedEnemy(Enemy enragedEnemy)
+    {
+        Instantiate(enragedEnemy, RandomSpawnPosition(), Quaternion.identity);
+    }
+
+    private Vector3 RandomSpawnPosition()
+    {
+        var randomSpawn = Random.Range(0, _spawns.Length);
+        var spawnPosition = new Vector3(_spawns[randomSpawn].transform.position.x, _spawns[randomSpawn].transform.position.y);
+
+        return spawnPosition;
+    }
+
+
     private IEnumerator CreateEnemies(float duration, Enemy enemyPrefab)
     {
         var spawning = true;
@@ -35,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
         while (spawning)
         {
             var randomSpawn = Random.Range(0, _spawns.Length);
-            var spawnPosition = new Vector3(_spawns[randomSpawn].transform.position.x, _spawns[randomSpawn].transform.position.y);
+            var spawnPosition = RandomSpawnPosition();
 
             Enemy newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
             yield return spawnDelayTime;
