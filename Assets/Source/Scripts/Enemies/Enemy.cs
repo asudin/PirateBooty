@@ -12,9 +12,12 @@ public class Enemy : MonoBehaviour
 
     public event Action<Enemy, Enemy> OnChestAreaEntered;
 
-    private void OnDestroy()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        OnChestAreaEntered?.Invoke(_enragedVariant, this);
+        if (collision.TryGetComponent<Chest>(out Chest chest))
+        {
+            OnChestAreaEntered?.Invoke(_enragedVariant, this);
+        }
     }
 }
 
