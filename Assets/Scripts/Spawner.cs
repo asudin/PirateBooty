@@ -17,14 +17,6 @@ public class Spawner : MonoBehaviour
     private Transform[] _coinSpawns;
     private Transform[] _enemySpawns;
 
-    //private void OnEnable()
-    //{
-    //    foreach (Enemy enemy in _enemyPrefabs)
-    //    {
-    //        enemy.OnChestAreaEntered += OnChestAreaReached;
-    //    }
-    //}
-
     private void Start()
     {
         CreateSpawn(ref _coinSpawns, _coinSpawnPoints);
