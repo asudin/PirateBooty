@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.TryGetComponent<Chest>(out Chest chest))
         {
+            gameObject.SetActive(false);
             OnChestAreaEntered?.Invoke(_enragedVariant, this);
         }
     }

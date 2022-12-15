@@ -3823,6 +3823,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3858ce5f081afa14da56b0ea05ae83aa, type: 3}
+--- !u!1 &815206018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 815206019}
+  m_Layer: 0
+  m_Name: EnemyContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &815206019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815206018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1696402426}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &817000616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20133,15 +20164,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549305f01197c2f439f7397d179847d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coindSpawnInterval: 6
-  _coinSpawnPoints: {fileID: 764150516}
-  _coinPrefab: {fileID: 7032593408931779550, guid: 5ac37e9438e0766449460da7668b47cc, type: 3}
-  _enemySpawnInterval: 3
+  _container: {fileID: 815206019}
+  _amount: 10
+  _spawnInterval: 2
   _enemySpawnPoints: {fileID: 1735734311}
   _enemyPrefabs:
   - {fileID: 9182528761879642226, guid: dce961400dcf67249abf1b66aaf5de06, type: 3}
-  - {fileID: 278094922539553241, guid: 848d9b664f9d5094394d578565490e17, type: 3}
   - {fileID: 5347328821395448141, guid: 7fd20e58cba094c4f95871ff6584d92f, type: 3}
+  - {fileID: 278094922539553241, guid: 848d9b664f9d5094394d578565490e17, type: 3}
 --- !u!4 &1696402426
 Transform:
   m_ObjectHideFlags: 0
@@ -20156,6 +20186,7 @@ Transform:
   m_Children:
   - {fileID: 764150516}
   - {fileID: 1735734311}
+  - {fileID: 815206019}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

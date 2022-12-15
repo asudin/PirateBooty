@@ -1,64 +1,28 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using System;
+using System.Linq;
 
-[Serializable]
-public class ObjectPoolItem
+public class ObjectPool<T> : MonoBehaviour where T : MonoBehaviour
 {
-    [SerializeField] private GameObject _objectToPool;
-    [SerializeField] private int _amountToPool;
-    [SerializeField] private bool _isExpandable = true;
+    [SerializeField] private Transform _container;
+    [SerializeField] private int _amount;
 
-    public GameObject ObjectToPool => _objectToPool;
-    public int AmountToPool => _amountToPool;
-    public bool IsExpandable => _isExpandable;
+    private List<T> _pool = new List<T>();
+
+    protected void Initialize(List<T> prefab)
+    {
+        for (int i = 0; i < _amount; i++)
+        {
+            T spawned = Instantiate(prefab[Random.Range(0, prefab.Count)], _container);
+            spawned.gameObject.SetActive(false);
+            _pool.Add(spawned);
+    }
 }
 
-public class ObjectPool : MonoBehaviour
-{
-    [SerializeField] private List<ObjectPoolItem> _itemsToPool;
-    [SerializeField] private List<GameObject> _pooledObjects;
-
-    public static ObjectPool SharedInstance;
-
-    private void Awake()
+    protected bool TryGetObjectInPool(out T result)
     {
-        SharedInstance = this;
-    }
-
-    private void Start()
-    {
-        _pooledObjects = new List<GameObject>();
-        foreach (ObjectPoolItem item in _itemsToPool)
-        {
-            for (int i = 0; i < item.AmountToPool; i++)
-            {
-                GameObject spawned = Instantiate(item.ObjectToPool);
-                spawned.SetActive(false);
-                _pooledObjects.Add(spawned);
-            }
-        }
-    }
-
-    public GameObject TryGetPooledObject(string label)
-    {
-        foreach (GameObject spawned in _pooledObjects)
-        {
-            if (!spawned.activeInHierarchy && spawned.tag == label)
-                return spawned;
-        }
-
-        foreach (ObjectPoolItem item in _itemsToPool)
-        {
-            if (item.ObjectToPool.tag == label && item.IsExpandable)
-            {
-                GameObject spawned = Instantiate(item.ObjectToPool);
-                spawned.SetActive(false);
-                _pooledObjects.Add(spawned);
-                return spawned;
-            }
-        }
-        return null;
+        T gameObject = _pool.FirstOrDefault(poolObject => poolObject.gameObject.activeSelf == false);
+        result = gameObject;
+        return result != null;
     }
 }

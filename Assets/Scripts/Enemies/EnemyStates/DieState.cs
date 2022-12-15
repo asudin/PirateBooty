@@ -7,6 +7,6 @@ public class DieState : State
 
     private void Die()
     {
-        gameObject.SetActive(false);
+        
     }
 }

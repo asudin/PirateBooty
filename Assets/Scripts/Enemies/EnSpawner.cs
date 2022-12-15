@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemySpawner : MonoBehaviour
+public class EnSpawner : MonoBehaviour
 {
     [SerializeField] private Transform _spawnPoints;
     [SerializeField] private Enemy _enemyPrefab;
