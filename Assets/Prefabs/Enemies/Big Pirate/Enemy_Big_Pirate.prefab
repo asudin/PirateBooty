@@ -17,8 +17,6 @@ GameObject:
   - component: {fileID: 5347328821395448141}
   - component: {fileID: 5852779629857474416}
   - component: {fileID: -7143912733682821434}
-  - component: {fileID: -2385858298099592604}
-  - component: {fileID: 2935681957294376356}
   m_Layer: 7
   m_Name: Enemy_Big_Pirate
   m_TagString: Untagged
@@ -199,33 +197,6 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c6a8cf88594fe1489a1e335cea698d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transitions:
-  - {fileID: -2385858298099592604}
---- !u!114 &-2385858298099592604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4605780586848494012}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81415f0db17f0e9429822e19f50aa07f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetState: {fileID: 2935681957294376356}
---- !u!114 &2935681957294376356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4605780586848494012}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da8166d6c5a4b0447b6b211aa507c711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions: []
