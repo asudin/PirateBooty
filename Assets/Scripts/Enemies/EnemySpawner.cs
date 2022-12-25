@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class EnemySpawner : ObjectPool<Enemy>
@@ -15,7 +14,6 @@ public class EnemySpawner : ObjectPool<Enemy>
     private void Start()
     {
         CreateSpawn(ref _enemySpawns, _enemySpawnPoints);
-        Spawn(_spawnInterval);
         Initialize(_enemyPrefabs);
     }
 
@@ -34,11 +32,6 @@ public class EnemySpawner : ObjectPool<Enemy>
         }
     }
 
-    private void Spawn(float enemySpawnInterval)
-    {
-        //StartCoroutine(CreateEnemies(enemySpawnInterval, _enemySpawns));
-    }
-
     private void SpawnEnemies(Transform[] enemySpawns)
     {
         _elapsedTime += Time.deltaTime;
@@ -51,19 +44,6 @@ public class EnemySpawner : ObjectPool<Enemy>
                 SetEnemy(enemy, RandomSpawnPosition(enemySpawns));
                 enemy.OnChestAreaEntered += OnChestAreaReached;
             }
-        }
-    }
-
-    private IEnumerator CreateEnemies(float duration, Transform[] enemySpawns)
-    {
-        var spawning = true;
-        var spawnDelayTime = new WaitForSeconds(duration);
-
-        while (spawning)
-        {
-            //GameObject enemy = ObjectPool.Instance.TryGetObjectInPool();
-           
-            yield return spawnDelayTime;
         }
     }
 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5ab9004fb9dab42aa3a96002d7d995, type: 3}
   m_Name: medBigPirate
   m_EditorClassIdentifier: 
-  _enemyName: 
+  _enemyName: Big Pirate
   Health: 4
   Speed: 2
   IsEnraged: 0
