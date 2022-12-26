@@ -3,8 +3,10 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] private WeaponConfig _weaponConfig;
-    [SerializeField] private Bullet _bullet;
     [SerializeField] private Transform _shootingPoint;
+
+
+    [SerializeField] protected Bullet Bullet;
 
     [Header("Misc.")]
     [SerializeField] private float _shootingCooldown;
@@ -17,11 +19,7 @@ public abstract class Weapon : MonoBehaviour
     public AudioSource ShootingSound => _shootingSound;
     public float ShootingCooldown => _shootingCooldown;
     public Animator WeaponAnimator => _animator;
+    public Transform ShootingPoint => _shootingPoint;
 
     public abstract void Shoot();
-
-    public void ShootBullet(float shootingAngle)
-    {
-        Instantiate(_bullet, _shootingPoint.position, Quaternion.Euler(0f, 0f, _shootingPoint.eulerAngles.z + shootingAngle));
-    }
 }

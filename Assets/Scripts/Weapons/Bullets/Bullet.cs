@@ -21,20 +21,23 @@ public class Bullet : MonoBehaviour
     {
         var destroyTimerDelay = 0.2f;
 
-        _animator.SetTrigger("isDestroyed");
+        //_animator.SetTrigger("isDestroyed");
         Destroy(gameObject, destroyTimerDelay);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out Enemy enemy))
         {
+            Debug.Log($"enemy");
             _destroySound.Play();
             DestroyBullet();
         }
 
-        if (collision.gameObject.TryGetComponent(out Wall wall))
+        if (collision.gameObject.TryGetComponent(out Wall wall) ||
+            collision.gameObject.TryGetComponent(out Ground ground))
         {
+            Debug.Log($"wall");
             _destroySound.Play();
             DestroyBullet();
         }

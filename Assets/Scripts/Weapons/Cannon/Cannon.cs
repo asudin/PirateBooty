@@ -4,12 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Cannon : Weapon
 {
-    private float _bulletAngle = 0;
-
     public override void Shoot()
     {
         WeaponAnimator.SetTrigger("isShooting");
         ShootingSound.Play();
-        ShootBullet(_bulletAngle);
+        Instantiate(Bullet, ShootingPoint.position, transform.rotation);
     }
 }
