@@ -8,7 +8,7 @@ public class WeaponConfig : ScriptableObject
 
     [Header("Configurations")]
     [SerializeField] private Sprite _icon;
-    private bool _isUsed = false;
+    [SerializeField] private bool _isUsed = false;
 
     public string WeaponLabel => _weaponLabel;
     public bool IsUsed => _isUsed;
