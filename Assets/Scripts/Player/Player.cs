@@ -12,9 +12,10 @@ public class Player : MonoBehaviour
 
     [Header("Current Weapon")]
     [SerializeField] private Transform _weaponParent;
-    [SerializeField] private Weapon _currentWeapon;
+    [SerializeField] private Weapon _pickedWeapon;
 
     private float _lastShotTime;
+    private Weapon _currentWeapon;
 
     private void OnEnable() => _coin.Collected += ChangeCountWallet;
 
@@ -34,7 +35,7 @@ public class Player : MonoBehaviour
 
     private Weapon InstantiateWeapon()
     {
-        return Instantiate(_currentWeapon, _weaponParent.position, transform.rotation, _weaponParent);
+        return Instantiate(_pickedWeapon, _weaponParent.position, transform.rotation, _weaponParent);
     }
 
     private void PlayerShoot()
