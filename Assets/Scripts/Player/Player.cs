@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 
     private void PlayerShoot()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Fire1"))
             if (_lastShotTime <= 0)
             {
                 _currentWeapon.Shoot();

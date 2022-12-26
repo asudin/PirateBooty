@@ -8,6 +8,6 @@ public class Cannon : Weapon
     {
         WeaponAnimator.SetTrigger("isShooting");
         ShootingSound.Play();
-        Instantiate(Bullet, ShootingPoint.position, transform.rotation);
+        Instantiate(Bullet, ShootingPoint.transform.position, transform.rotation);
     }
 }

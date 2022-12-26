@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private GroundDetector _groundDetector;
+    private bool _isFacingRight = true;
+
+    public bool isFacingRight;
 
     [Header("Movement Configuration")]
     [SerializeField] private float _speed = 2f;
@@ -38,8 +41,22 @@ public class PlayerMovement : MonoBehaviour
         if (jumpInputReleased && _rigidbody.velocity.y > 0)
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
 
-        if (horizontalInput != 0)
-            transform.localScale = new Vector3(Mathf.Sign(horizontalInput), 1, 1);
+        if (horizontalInput > 0 && !_isFacingRight)
+        {
+            FlipSides();
+        }
+        else if (horizontalInput < 0 && _isFacingRight)
+        {
+            FlipSides();
+        }
+    }
+
+    private void FlipSides()
+    {
+        var rotationAngles = 180;
+
+        _isFacingRight = !_isFacingRight;
+        transform.Rotate(0, rotationAngles, 0);
     }
 
     private void Move(float horizontalMovement, float speed)
