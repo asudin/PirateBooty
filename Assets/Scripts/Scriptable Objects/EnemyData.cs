@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EnemyData", menuName ="Source/Enemy", order = 51)]
+[CreateAssetMenu(fileName = "EnemyData", menuName = "ScriptableObjects/Enemy", order = 51)]
 public sealed class EnemyData : ScriptableObject
 {
     [Header("[Name]"), Space]

@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c5ab9004fb9dab42aa3a96002d7d995, type: 3}
-  m_Name: smFrog
+  m_Script: {fileID: 11500000, guid: 65c6603fa4c98db48bf18ac472480fb3, type: 3}
+  m_Name: Cannon
   m_EditorClassIdentifier: 
-  _enemyName: smFrog
-  Health: 1
-  Speed: 4
-  IsEnraged: 0
-  _enemyPrefab: {fileID: 1417725477532620238, guid: e1bba9a105d03f24cb47bd272f5b2302, type: 3}
+  _label: Cannon
+  _shootingCooldown: 0.5
+  _isUsed: 0
+  _projectileAngle: 0
+  _bullet: {fileID: -322160404541094087, guid: 11ca4ce7af1247d499c5ebf920c1a564, type: 3}

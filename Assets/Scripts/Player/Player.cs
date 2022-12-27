@@ -1,41 +1,44 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Animator), typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Coin _coin;
+    [SerializeField] private Crate _crate;
 
-    private int _walletPlayer = 0;
+    [Header("Configurations")]
+    private int _playerScore = 0;
     [SerializeField] private Animator _animator;
     [SerializeField] private AudioSource _dieSound;
 
     [Header("Current Weapon")]
     [SerializeField] private Transform _weaponParent;
-    [SerializeField] private Weapon _pickedWeapon;
+    [SerializeField] private List<Weapon> _weapons;
 
     private float _lastShotTime;
     private Weapon _currentWeapon;
 
-    private void OnEnable() => _coin.Collected += ChangeCountWallet;
+    //private void OnEnable() => _coin.Collected += ChangeCountWallet;
 
-    private void OnDisable() => _coin.Collected -= ChangeCountWallet;
+    //private void OnDisable() => _coin.Collected -= ChangeCountWallet;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _dieSound = GetComponent<AudioSource>();
-        _currentWeapon = InstantiateWeapon();
+        _currentWeapon = InstantiateWeapon(_weapons);
     }
 
     private void Update()
     {
         PlayerShoot();
+        Debug.Log(_currentWeapon.WeaponData.Label);
     }
 
-    private Weapon InstantiateWeapon()
+    private Weapon InstantiateWeapon(List<Weapon> weapons)
     {
-        return Instantiate(_pickedWeapon, _weaponParent.position, transform.rotation, _weaponParent);
+        return Instantiate(_weapons[Random.Range(0, weapons.Count)], _weaponParent.position, transform.rotation, _weaponParent);
     }
 
     private void PlayerShoot()
@@ -44,22 +47,34 @@ public class Player : MonoBehaviour
             if (_lastShotTime <= 0)
             {
                 _currentWeapon.Shoot();
-                _lastShotTime = _currentWeapon.ShootingCooldown;
+                _lastShotTime = _currentWeapon.WeaponData.ShootingCooldown;
             }
         _lastShotTime -= Time.deltaTime;
     }
 
-    private void ChangeCountWallet(int score)
+    private void ChangeScore(int score)
     {
-        _walletPlayer += score;
+        _playerScore += score;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.TryGetComponent(out Enemy enemy))
+        if (collision.collider.TryGetComponent(out Enemy enemy))
         {
             Destroy(gameObject);
         }
+
+        if (collision.collider.TryGetComponent(out Crate crate))
+        {
+            //crate.CollectWeapon += OnWeaponCrateReached;
+            _currentWeapon = _weapons[Random.Range(0, _weapons.Count)];
+        }
+    }
+
+    private void OnWeaponCrateReached(Weapon weapon, Crate crate)
+    {
+        _currentWeapon = weapon;
+        crate.CollectWeapon -= OnWeaponCrateReached;
     }
 
     //private IEnumerator Die()

@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 3892745038670319511}
   - component: {fileID: 6371056248287512609}
   - component: {fileID: -545067851135329105}
-  - component: {fileID: -5474368097428523800}
+  - component: {fileID: -6674308414880282306}
   m_Layer: 0
-  m_Name: Cannon
+  m_Name: test A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c6849c43be68f294a95c2de1858fd1ee, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -235,7 +235,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-5474368097428523800
+--- !u!114 &-6674308414880282306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

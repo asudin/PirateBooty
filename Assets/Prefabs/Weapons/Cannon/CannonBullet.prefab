@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
-  _speed: 5
+  _speed: 10
   _animator: {fileID: -6005914374019038168}
   _destroySound: {fileID: 6669954926513575220}
 --- !u!58 &3852019411581690250

@@ -29,7 +29,6 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Enemy enemy))
         {
-            Debug.Log($"enemy");
             _destroySound.Play();
             DestroyBullet();
         }
@@ -37,7 +36,6 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out Wall wall) ||
             collision.gameObject.TryGetComponent(out Ground ground))
         {
-            Debug.Log($"wall");
             _destroySound.Play();
             DestroyBullet();
         }
