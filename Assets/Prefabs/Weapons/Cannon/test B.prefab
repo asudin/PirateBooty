@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7cf6414765ff94a86e08ec27c15f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponData: {fileID: 11400000, guid: b5905374931f85e4497424e3a2b10a46, type: 2}
+  _weaponData: {fileID: 11400000, guid: 9f7f55c0bcb97d24493581bc4d882840, type: 2}
   _shootingPoint: {fileID: 8485619321045189362}
   _animator: {fileID: -545067851135329105}
   _shootingSound: {fileID: 6371056248287512609}

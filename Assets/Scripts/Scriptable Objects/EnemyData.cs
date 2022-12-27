@@ -3,14 +3,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyData", menuName = "ScriptableObjects/Enemy", order = 51)]
 public sealed class EnemyData : ScriptableObject
 {
-    [Header("[Name]"), Space]
+    [Header("Info"), Space]
     [SerializeField] private string _enemyName;
 
-    [Header("[Stats]"), Space]
+    [Header("Configurations"), Space]
     [field: SerializeField] public int Health;
     [field: SerializeField] public float Speed;
     [field: SerializeField] public bool IsEnraged;
 
-    [Header("[Prefab]"), Space]
+    [Header("Prefab"), Space]
     [SerializeField] private GameObject _enemyPrefab;
 }

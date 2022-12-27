@@ -10,6 +10,18 @@ public class Crate : MonoBehaviour
 
     public event Action<Weapon, Crate> CollectWeapon;
 
+    private Weapon test;
+
+    private void Awake()
+    {
+        test = GetRandomWeapon(_weapons);
+    }
+
+    private void Update()
+    {
+        Debug.Log($"{this.name}: {test.WeaponData.Label}");
+    }
+
     private Weapon GetRandomWeapon(List<Weapon> weapons)
     {
         return weapons[Random.Range(0, weapons.Count)];

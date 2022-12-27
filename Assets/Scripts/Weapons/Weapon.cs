@@ -13,13 +13,12 @@ public class Weapon : MonoBehaviour
 
     public AudioSource ShootingSound => _shootingSound;
     public Animator WeaponAnimator => _animator;
-    public Transform ShootingPoint => _shootingPoint;
     public WeaponData WeaponData => _weaponData;
 
     public void Shoot()
     {
         WeaponAnimator.SetTrigger("isShooting");
         ShootingSound.Play();
-        Instantiate(_weaponData.Bullet, ShootingPoint.transform.position, transform.rotation);
+        Instantiate(_weaponData.Bullet, _shootingPoint.transform.position, transform.rotation);
     }
 }

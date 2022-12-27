@@ -66,15 +66,23 @@ public class Player : MonoBehaviour
 
         if (collision.collider.TryGetComponent(out Crate crate))
         {
-            //crate.CollectWeapon += OnWeaponCrateReached;
-            _currentWeapon = _weapons[Random.Range(0, _weapons.Count)];
+            
         }
+    }
+
+    private void OnEnable()
+    {
+        _crate.CollectWeapon += OnWeaponCrateReached;
+    }
+
+    private void OnDisable()
+    {
+        _crate.CollectWeapon -= OnWeaponCrateReached;
     }
 
     private void OnWeaponCrateReached(Weapon weapon, Crate crate)
     {
-        _currentWeapon = weapon;
-        crate.CollectWeapon -= OnWeaponCrateReached;
+        _currentWeapon = Instantiate(weapon, _weaponParent.position, transform.rotation, _weaponParent);
     }
 
     //private IEnumerator Die()
