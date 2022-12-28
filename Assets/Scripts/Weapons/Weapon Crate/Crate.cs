@@ -20,9 +20,6 @@ public class Crate : MonoBehaviour
     private void Update()
     {
         Debug.Log($"{this.name}: {randomWeapon.WeaponData.Label}");
-
-        if (GameObject.FindObjectOfType<Player>().CurrentWeapon == randomWeapon)
-            randomWeapon = GetRandomWeapon(_weapons);
     }
 
     private Weapon GetRandomWeapon(List<Weapon> weapons)
