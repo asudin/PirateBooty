@@ -21,10 +21,6 @@ public class Player : MonoBehaviour
 
     public Weapon CurrentWeapon => _currentWeapon;
 
-    //private void OnEnable() => _coin.Collected += ChangeCountWallet;
-
-    //private void OnDisable() => _coin.Collected -= ChangeCountWallet;
-
     private void OnEnable() => _crate.CollectWeapon += ChangeWeapons;
 
     private void OnDisable() => _crate.CollectWeapon -= ChangeWeapons;
@@ -38,7 +34,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        PlayerShoot();
+        Shoot();
         Debug.Log(_currentWeapon.WeaponData.Label);
     }
 
@@ -47,7 +43,7 @@ public class Player : MonoBehaviour
         return Instantiate(_weapons[Random.Range(0, weapons.Count)], _weaponParent.position, transform.rotation, _weaponParent);
     }
 
-    private void PlayerShoot()
+    private void Shoot()
     {
         if (Input.GetButtonDown("Fire1"))
             if (_lastShotTime <= 0)
@@ -56,11 +52,6 @@ public class Player : MonoBehaviour
                 _lastShotTime = _currentWeapon.WeaponData.ShootingCooldown;
             }
         _lastShotTime -= Time.deltaTime;
-    }
-
-    private void ChangeScore(int score)
-    {
-        _playerScore += score;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -73,19 +64,7 @@ public class Player : MonoBehaviour
 
     private void ChangeWeapons(Weapon weapon)
     {
-        //Destroy(_currentWeapon);
-        Debug.Log($"THIS: {weapon.WeaponData.Label}");
+        Destroy(_currentWeapon.gameObject);
         _currentWeapon = Instantiate(weapon, _weaponParent.position, transform.rotation, _weaponParent);
     }
-
-    //private IEnumerator Die()
-    //{
-    //    var waitTime = 0.5f;
-
-    //    _animator.Play("Die");
-    //    _dieSound.Play();
-
-    //    yield return new WaitForSeconds(waitTime);
-    //    Destroy(gameObject);
-    //}
 }

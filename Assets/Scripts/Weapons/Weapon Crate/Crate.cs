@@ -17,11 +17,6 @@ public class Crate : MonoBehaviour
         randomWeapon = GetRandomWeapon(_weapons);
     }
 
-    private void Update()
-    {
-        Debug.Log($"{this.name}: {randomWeapon.WeaponData.Label}");
-    }
-
     private Weapon GetRandomWeapon(List<Weapon> weapons)
     {
         return weapons[Random.Range(0, weapons.Count)];
