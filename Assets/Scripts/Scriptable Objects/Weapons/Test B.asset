@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c6603fa4c98db48bf18ac472480fb3, type: 3}
   m_Name: Test B
   m_EditorClassIdentifier: 
-  _label: Test A
+  _label: Test B
   _shootingCooldown: 0.5
   _isUsed: 0
   _projectileAngle: 0

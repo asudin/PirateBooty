@@ -19,9 +19,15 @@ public class Player : MonoBehaviour
     private float _lastShotTime;
     private Weapon _currentWeapon;
 
+    public Weapon CurrentWeapon => _currentWeapon;
+
     //private void OnEnable() => _coin.Collected += ChangeCountWallet;
 
     //private void OnDisable() => _coin.Collected -= ChangeCountWallet;
+
+    private void OnEnable() => _crate.CollectWeapon += ChangeWeapons;
+
+    private void OnDisable() => _crate.CollectWeapon -= ChangeWeapons;
 
     private void Start()
     {
@@ -63,25 +69,12 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        if (collision.collider.TryGetComponent(out Crate crate))
-        {
-            
-        }
     }
 
-    private void OnEnable()
+    private void ChangeWeapons(Weapon weapon)
     {
-        _crate.CollectWeapon += OnWeaponCrateReached;
-    }
-
-    private void OnDisable()
-    {
-        _crate.CollectWeapon -= OnWeaponCrateReached;
-    }
-
-    private void OnWeaponCrateReached(Weapon weapon, Crate crate)
-    {
+        //Destroy(_currentWeapon);
+        Debug.Log($"THIS: {weapon.WeaponData.Label}");
         _currentWeapon = Instantiate(weapon, _weaponParent.position, transform.rotation, _weaponParent);
     }
 

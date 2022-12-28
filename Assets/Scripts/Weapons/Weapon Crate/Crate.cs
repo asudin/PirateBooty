@@ -8,18 +8,21 @@ public class Crate : MonoBehaviour
     [Header("References")]
     [SerializeField] private List<Weapon> _weapons;
 
-    public event Action<Weapon, Crate> CollectWeapon;
+    private Weapon randomWeapon;
 
-    private Weapon test;
+    public event Action<Weapon> CollectWeapon;
 
     private void Awake()
     {
-        test = GetRandomWeapon(_weapons);
+        randomWeapon = GetRandomWeapon(_weapons);
     }
 
     private void Update()
     {
-        Debug.Log($"{this.name}: {test.WeaponData.Label}");
+        Debug.Log($"{this.name}: {randomWeapon.WeaponData.Label}");
+
+        if (GameObject.FindObjectOfType<Player>().CurrentWeapon == randomWeapon)
+            randomWeapon = GetRandomWeapon(_weapons);
     }
 
     private Weapon GetRandomWeapon(List<Weapon> weapons)
@@ -31,7 +34,7 @@ public class Crate : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out Player player))
         {
-            CollectWeapon?.Invoke(GetRandomWeapon(_weapons), this);
+            CollectWeapon?.Invoke(randomWeapon);
             Destroy(gameObject);
         }
     }

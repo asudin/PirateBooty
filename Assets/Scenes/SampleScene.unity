@@ -8108,6 +8108,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4516038054456177591, guid: 190f654d93937de40958f7ee02c294e4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 910644347034911041}
+    - target: {fileID: 4516038054456177591, guid: 190f654d93937de40958f7ee02c294e4, type: 3}
       propertyPath: _weapons.Array.data[0]
       value: 
       objectReference: {fileID: -5474368097428523800, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}
