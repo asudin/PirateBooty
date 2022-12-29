@@ -1,33 +1,40 @@
-using System;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using DG.Tweening;
 
 public class Crate : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private List<Weapon> _weapons;
+    [SerializeField] private Weapon[] _weapons;
+    [SerializeField] private TMP_Text _weaponLabel;
 
-    private Weapon randomWeapon;
+    private int _generatedIndex;
+    private Tween _tween;
 
-    public event Action<Weapon> CollectWeapon;
-
-    private void Awake()
+    public int GetRandomWeaponIndex()
     {
-        randomWeapon = GetRandomWeapon(_weapons);
+        int currentIndex = Random.Range(0, _weapons.Length);
+
+        while (_generatedIndex == currentIndex)
+            currentIndex = Random.Range(0, _weapons.Length);
+
+        _generatedIndex = currentIndex;
+        ShowInfo();
+        return _generatedIndex;
     }
 
-    private Weapon GetRandomWeapon(List<Weapon> weapons)
+    private void ShowInfo()
     {
-        return weapons[Random.Range(0, weapons.Count)];
+        _weaponLabel.text = _weapons[_generatedIndex].WeaponData.Label;
+        ResetPosition();
+        _weaponLabel.gameObject.SetActive(true);
+
+        if (_tween != null)
+            _tween.Kill();
+        _tween = _weaponLabel.transform.DOLocalMoveY(2, 2f).OnComplete(() => _weaponLabel.gameObject.SetActive(false));
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void ResetPosition()
     {
-        if (collision.collider.TryGetComponent(out Player player))
-        {
-            CollectWeapon?.Invoke(randomWeapon);
-            Destroy(gameObject);
-        }
+        _weaponLabel.transform.position = transform.position;
     }
 }

@@ -1,51 +1,50 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Animator), typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Crate _crate;
-
     [Header("Configurations")]
-    private int _playerScore = 0;
+    //private int _playerScore = 0;
     [SerializeField] private Animator _animator;
     [SerializeField] private AudioSource _dieSound;
 
-    [Header("Current Weapon")]
+    [Header("Weapons")]
     [SerializeField] private Transform _weaponParent;
-    [SerializeField] private List<Weapon> _weapons;
+    private Weapon[] _weapons;
 
     private float _lastShotTime;
     private Weapon _currentWeapon;
 
     public Weapon CurrentWeapon => _currentWeapon;
 
-    private void OnEnable() => _crate.CollectWeapon += ChangeWeapons;
-
-    private void OnDisable() => _crate.CollectWeapon -= ChangeWeapons;
-
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _dieSound = GetComponent<AudioSource>();
-        _currentWeapon = InstantiateWeapon(_weapons);
+
+        _weapons = _weaponParent.GetComponentsInChildren<Weapon>(true);
+        _currentWeapon = _weapons[0];
     }
 
     private void Update()
     {
         Shoot();
-        Debug.Log(_currentWeapon.WeaponData.Label);
     }
 
-    private Weapon InstantiateWeapon(List<Weapon> weapons)
+    private void ChangeWeapon(int randomWeaponIndex)
     {
-        return Instantiate(_weapons[Random.Range(0, weapons.Count)], _weaponParent.position, transform.rotation, _weaponParent);
+        _currentWeapon.gameObject.SetActive(false);
+        _currentWeapon = _weapons[randomWeaponIndex];
+        _currentWeapon.gameObject.SetActive(true);
     }
 
     private void Shoot()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.X))
             if (_lastShotTime <= 0)
             {
                 _currentWeapon.Shoot();
@@ -60,11 +59,11 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
-    private void ChangeWeapons(Weapon weapon)
-    {
-        Destroy(_currentWeapon.gameObject);
-        _currentWeapon = Instantiate(weapon, _weaponParent.position, transform.rotation, _weaponParent);
+        if (collision.gameObject.TryGetComponent(out Crate crate))
+        {
+            ChangeWeapon(crate.GetRandomWeaponIndex());
+            //Destroy(crate.gameObject);
+        }
     }
 }

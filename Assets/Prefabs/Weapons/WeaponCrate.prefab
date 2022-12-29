@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapons:
-  - {fileID: -5034394988577078626, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}
-  - {fileID: -5034394988577078626, guid: 29af52b1bef214947b30877f3a81b5e9, type: 3}
-  - {fileID: -5034394988577078626, guid: fdc194292ee535540891d9699ad1efe8, type: 3}
+  - {fileID: -5474368097428523800, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}
+  - {fileID: -6674308414880282306, guid: 29af52b1bef214947b30877f3a81b5e9, type: 3}
+  - {fileID: -1168857339136427912, guid: fdc194292ee535540891d9699ad1efe8, type: 3}
+  _weaponLabel: {fileID: 0}
