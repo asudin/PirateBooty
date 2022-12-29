@@ -17,8 +17,6 @@ GameObject:
   - component: {fileID: 9182528761879642226}
   - component: {fileID: 6399946305442563674}
   - component: {fileID: 7180429558574066154}
-  - component: {fileID: -773840281802905731}
-  - component: {fileID: 768469903845008108}
   m_Layer: 7
   m_Name: medFishman
   m_TagString: Untagged
@@ -81,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 12
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 75c1b5f7cae05e64cac1398f81ed16fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -199,33 +197,6 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c6a8cf88594fe1489a1e335cea698d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transitions:
-  - {fileID: -773840281802905731}
---- !u!114 &-773840281802905731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417725477532620238}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81415f0db17f0e9429822e19f50aa07f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _targetState: {fileID: 768469903845008108}
---- !u!114 &768469903845008108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417725477532620238}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da8166d6c5a4b0447b6b211aa507c711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions: []

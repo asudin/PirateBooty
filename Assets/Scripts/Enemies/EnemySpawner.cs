@@ -1,58 +1,71 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : ObjectPool<Enemy>
 {
-    [SerializeField] private Transform _spawnPoints;
-    [SerializeField] private Enemy _enemyPrefab;
+    [Header("Enemy Spawn Settings")]
+    [SerializeField] private float _spawnInterval;
+    [SerializeField] private Transform _enemySpawnPoints;
+    [SerializeField] private List<Enemy> _enemyPrefabs;
 
-    private Transform[] _spawns;
+    private Transform[] _enemySpawns;
+    private float _elapsedTime;
 
     private void Start()
     {
-        _spawns = new Transform[_spawnPoints.childCount];
+        CreateSpawn(ref _enemySpawns, _enemySpawnPoints);
+        Initialize(_enemyPrefabs);
+    }
 
-        for (int i = 0; i < _spawnPoints.childCount; i++)
+    private void FixedUpdate()
+    {
+        SpawnEnemies(_enemySpawns);
+    }
+
+    private void CreateSpawn(ref Transform[] spawns, Transform spawnPoints)
+    {
+        spawns = new Transform[spawnPoints.childCount];
+
+        for (int i = 0; i < spawnPoints.childCount; i++)
         {
-            _spawns[i] = _spawnPoints.GetChild(i);
+            spawns[i] = spawnPoints.GetChild(i);
         }
-
-        SpawnEnemies();
     }
 
-    private void SpawnEnemies()
+    private void SpawnEnemies(Transform[] enemySpawns)
     {
-        var spawningInterval = 4f;
+        _elapsedTime += Time.deltaTime;
 
-        StartCoroutine(CreateEnemies(spawningInterval, _enemyPrefab));
+        if (_elapsedTime >= _spawnInterval)
+        {
+            _elapsedTime = 0;
+            if (TryGetObjectInPool(out Enemy enemy))
+            {
+                SetEnemy(enemy, RandomSpawnPosition(enemySpawns));
+                enemy.OnChestAreaEntered += OnChestAreaReached;
+            }
+        }
     }
 
-    private void SpawnEnragedEnemy(Enemy enragedEnemy)
+    private void SetEnemy(Enemy enemy, Vector3 spawnPoint)
     {
-        Instantiate(enragedEnemy, RandomSpawnPosition(), Quaternion.identity);
+        enemy.gameObject.SetActive(true);
+        enemy.transform.position = spawnPoint;
     }
 
-    private Vector3 RandomSpawnPosition()
+    private Vector3 RandomSpawnPosition(Transform[] spawns)
     {
-        var randomSpawn = Random.Range(0, _spawns.Length);
-        var spawnPosition = new Vector3(_spawns[randomSpawn].transform.position.x, _spawns[randomSpawn].transform.position.y);
+        var randomSpawn = Random.Range(0, spawns.Length);
+        var spawnPosition = new Vector3(
+            spawns[randomSpawn].transform.position.x,
+            spawns[randomSpawn].transform.position.y);
 
         return spawnPosition;
     }
 
-
-    private IEnumerator CreateEnemies(float duration, Enemy enemyPrefab)
+    private void OnChestAreaReached(Enemy enragedEnemy, Enemy destroyedEnemy)
     {
-        var spawning = true;
-        var spawnDelayTime = new WaitForSeconds(duration);
-
-        while (spawning)
-        {
-            var randomSpawn = Random.Range(0, _spawns.Length);
-            var spawnPosition = RandomSpawnPosition();
-
-            Enemy newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-            yield return spawnDelayTime;
-        }
+        Instantiate(enragedEnemy, RandomSpawnPosition(_enemySpawns), Quaternion.identity);
+        destroyedEnemy.OnChestAreaEntered -= OnChestAreaReached;
     }
 }

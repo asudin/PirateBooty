@@ -1,46 +1,69 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Animator), typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Coin _coin;
-
-    private int _walletPlayer = 0;
+    [Header("Configurations")]
+    //private int _playerScore = 0;
     [SerializeField] private Animator _animator;
     [SerializeField] private AudioSource _dieSound;
 
-    private void OnEnable() => _coin.Collected += ChangeCountWallet;
+    [Header("Weapons")]
+    [SerializeField] private Transform _weaponParent;
+    private Weapon[] _weapons;
 
-    private void OnDisable() => _coin.Collected -= ChangeCountWallet;
+    private float _lastShotTime;
+    private Weapon _currentWeapon;
+
+    public Weapon CurrentWeapon => _currentWeapon;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _dieSound = GetComponent<AudioSource>();
+
+        _weapons = _weaponParent.GetComponentsInChildren<Weapon>(true);
+        _currentWeapon = _weapons[0];
     }
 
-    private void ChangeCountWallet(int score)
+    private void Update()
     {
-        _walletPlayer += score;
+        Shoot();
+    }
+
+    private void ChangeWeapon(int randomWeaponIndex)
+    {
+        _currentWeapon.gameObject.SetActive(false);
+        _currentWeapon = _weapons[randomWeaponIndex];
+        _currentWeapon.gameObject.SetActive(true);
+    }
+
+    private void Shoot()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+            if (_lastShotTime <= 0)
+            {
+                _currentWeapon.Shoot();
+                _lastShotTime = _currentWeapon.WeaponData.ShootingCooldown;
+            }
+        _lastShotTime -= Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.TryGetComponent(out Enemy enemy))
+        if (collision.collider.TryGetComponent(out Enemy enemy))
         {
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.TryGetComponent(out Crate crate))
+        {
+            ChangeWeapon(crate.GetRandomWeaponIndex());
+            //Destroy(crate.gameObject);
+        }
     }
-
-    //private IEnumerator Die()
-    //{
-    //    var waitTime = 0.5f;
-
-    //    _animator.Play("Die");
-    //    _dieSound.Play();
-
-    //    yield return new WaitForSeconds(waitTime);
-    //    Destroy(gameObject);
-    //}
 }

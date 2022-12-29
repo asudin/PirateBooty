@@ -14,10 +14,14 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<Chest>(out Chest chest))
+        if (collision.TryGetComponent(out Chest chest))
         {
+            gameObject.SetActive(false);
             OnChestAreaEntered?.Invoke(_enragedVariant, this);
         }
+
+        if (collision.TryGetComponent(out Bullet bullet))
+            gameObject.SetActive(false);
     }
 }
 

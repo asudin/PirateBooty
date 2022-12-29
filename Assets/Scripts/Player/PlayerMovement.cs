@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private GroundDetector _groundDetector;
+    private bool _isFacingRight = true;
+
+    public bool isFacingRight;
 
     [Header("Movement Configuration")]
     [SerializeField] private float _speed = 2f;
@@ -33,13 +36,27 @@ public class PlayerMovement : MonoBehaviour
 
         Move(horizontalInput, _speed);
         if (jumpInput && isGrounded)
-            Jump(_jumpForce);
+            Jump(_jumpForce, groundedState, isGrounded);
 
         if (jumpInputReleased && _rigidbody.velocity.y > 0)
-            _rigidbody.velocity = new Vector2(-_rigidbody.velocity.x, 0);
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
 
-        if (horizontalInput != 0)
-            InstantFall(groundedState, horizontalInput, isGrounded);
+        if (horizontalInput > 0 && !_isFacingRight)
+        {
+            FlipSides();
+        }
+        else if (horizontalInput < 0 && _isFacingRight)
+        {
+            FlipSides();
+        }
+    }
+
+    private void FlipSides()
+    {
+        var rotationAngles = 180;
+
+        _isFacingRight = !_isFacingRight;
+        transform.Rotate(0, rotationAngles, 0);
     }
 
     private void Move(float horizontalMovement, float speed)
@@ -48,17 +65,12 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.velocity = new Vector2(horizontalMovement * speed, _rigidbody.velocity.y);
     }
 
-    private void Jump(float jumpForce)
+    private void Jump(float jumpForce, string groundedState, bool isGrounded)
     {
         _animator.SetTrigger("Jump");
         PlayDust(_dustParticle);
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpForce);
-    }
-
-    private void InstantFall(string groundedState, float horizontalMovement, bool isGrounded)
-    {
         _animator.SetBool(groundedState, isGrounded);
-        transform.localScale = new Vector3(Mathf.Sign(horizontalMovement), 1, 1);
     }
 
     private void PlayDust(ParticleSystem jumpParticles)
