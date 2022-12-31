@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out Crate crate))
         {
             ChangeWeapon(crate.GetRandomWeaponIndex());
-            //Destroy(crate.gameObject);
+            Destroy(crate.gameObject);
         }
     }
 }

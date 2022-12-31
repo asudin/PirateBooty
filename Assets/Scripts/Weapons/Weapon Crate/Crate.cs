@@ -30,7 +30,7 @@ public class Crate : MonoBehaviour
 
         if (_tween != null)
             _tween.Kill();
-        _tween = _weaponLabel.transform.DOLocalMoveY(2, 2f).OnComplete(() => _weaponLabel.gameObject.SetActive(false));
+        _tween = _weaponLabel.transform.DOLocalMoveY(2, 0.2f).OnComplete(() => _weaponLabel.gameObject.SetActive(false));
     }
 
     private void ResetPosition()
