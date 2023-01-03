@@ -18,8 +18,10 @@ public class Player : MonoBehaviour
 
     private float _lastShotTime;
     private Weapon _currentWeapon;
+    private bool _isAlive = true;
 
     public Weapon CurrentWeapon => _currentWeapon;
+    public bool IsAlive => _isAlive;
 
     private void Start()
     {
@@ -57,13 +59,14 @@ public class Player : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out Enemy enemy))
         {
+            _isAlive = false;
             Destroy(gameObject);
         }
 
         if (collision.gameObject.TryGetComponent(out Crate crate))
         {
             ChangeWeapon(crate.GetRandomWeaponIndex());
-            Destroy(crate.gameObject);
+            crate.gameObject.SetActive(false);
         }
     }
 }

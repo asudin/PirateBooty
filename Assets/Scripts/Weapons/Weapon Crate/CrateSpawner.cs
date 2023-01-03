@@ -5,16 +5,20 @@ using UnityEngine;
 public class CrateSpawner : ObjectPool<Crate>
 {
     [Header("Crate Spawn Settings")]
-    [SerializeField] private float _spawnInterval;
     [SerializeField] private Transform _crateSpawnPoints;
-    [SerializeField] private Crate _cratePrefab;
+    [SerializeField] private List<Crate> _cratePrefabs;
 
     private Transform[] _crateSpawns;
-    private float _elapsedTime;
 
     private void Start()
     {
         CreateSpawn(ref _crateSpawns, _crateSpawnPoints);
+        Initialize(_cratePrefabs);
+    }
+
+    private void FixedUpdate()
+    {
+       SpawnCrate(_crateSpawns);
     }
 
     private void CreateSpawn(ref Transform[] spawns, Transform spawnPoints)
@@ -24,6 +28,14 @@ public class CrateSpawner : ObjectPool<Crate>
         for (int i = 0; i < spawnPoints.childCount; i++)
         {
             spawns[i] = spawnPoints.GetChild(i);
+        }
+    }
+
+    private void SpawnCrate(Transform[] crateSpawns)
+    {
+        if (TryGetObjectInPool(out Crate crate))
+        {
+            SetCrate(crate, RandomSpawnPosition(crateSpawns));
         }
     }
 
@@ -37,17 +49,9 @@ public class CrateSpawner : ObjectPool<Crate>
         return spawnPosition;
     }
 
-    private void SpawnCrate(Transform[] crateSpawns)
+    private void SetCrate(Crate crate, Vector3 spawnPoint)
     {
-        _elapsedTime += Time.deltaTime;
-
-        if (_elapsedTime >= _spawnInterval)
-        {
-            _elapsedTime = 0;
-            if (TryGetObjectInPool(out Crate enemy))
-            {
-
-            }
-        }
+        crate.gameObject.SetActive(true);
+        crate.transform.position = spawnPoint;
     }
 }
