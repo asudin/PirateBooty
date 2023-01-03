@@ -1,6 +1,7 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CrateSpawner : ObjectPool<Crate>
 {
@@ -9,6 +10,8 @@ public class CrateSpawner : ObjectPool<Crate>
     [SerializeField] private List<Crate> _cratePrefabs;
 
     private Transform[] _crateSpawns;
+
+    public event Action<List<Crate>> Collected;
 
     private void Start()
     {
@@ -26,9 +29,7 @@ public class CrateSpawner : ObjectPool<Crate>
         spawns = new Transform[spawnPoints.childCount];
 
         for (int i = 0; i < spawnPoints.childCount; i++)
-        {
             spawns[i] = spawnPoints.GetChild(i);
-        }
     }
 
     private void SpawnCrate(Transform[] crateSpawns)
@@ -52,6 +53,12 @@ public class CrateSpawner : ObjectPool<Crate>
     private void SetCrate(Crate crate, Vector3 spawnPoint)
     {
         crate.gameObject.SetActive(true);
+        crate.SetSpawner(this);
         crate.transform.position = spawnPoint;
+    }
+
+    public void InvokeEvent()
+    {
+        Collected?.Invoke(_cratePrefabs);
     }
 }

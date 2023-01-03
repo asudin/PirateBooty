@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
+using Random = UnityEngine.Random;
 
 public class Crate : MonoBehaviour
 {
@@ -8,7 +9,11 @@ public class Crate : MonoBehaviour
     [SerializeField] private TMP_Text _weaponLabel;
 
     private int _generatedIndex;
+    private int _score = 1;
+    private CrateSpawner _spawner;
     private Tween _tween;
+
+    public int Score => _score;
 
     public int GetRandomWeaponIndex()
     {
@@ -36,5 +41,16 @@ public class Crate : MonoBehaviour
     private void ResetPosition()
     {
         _weaponLabel.transform.position = transform.position;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out Player player))
+            _spawner.InvokeEvent();
+    }
+
+    public void SetSpawner(CrateSpawner spawner)
+    {
+        _spawner = spawner;
     }
 }
