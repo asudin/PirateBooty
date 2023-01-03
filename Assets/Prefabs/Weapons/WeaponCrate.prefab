@@ -287,6 +287,7 @@ MonoBehaviour:
   - {fileID: -6674308414880282306, guid: 29af52b1bef214947b30877f3a81b5e9, type: 3}
   - {fileID: -1168857339136427912, guid: fdc194292ee535540891d9699ad1efe8, type: 3}
   _weaponLabel: {fileID: 5930218089590191311}
+  _spawner: {fileID: 0}
 --- !u!1 &9110694706053347442
 GameObject:
   m_ObjectHideFlags: 0

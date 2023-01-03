@@ -1,14 +1,9 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System;
-using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Animator), typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
     [Header("Configurations")]
-    //private int _playerScore = 0;
     [SerializeField] private Animator _animator;
     [SerializeField] private AudioSource _dieSound;
 
@@ -18,8 +13,6 @@ public class Player : MonoBehaviour
 
     private float _lastShotTime;
     private Weapon _currentWeapon;
-
-    public Weapon CurrentWeapon => _currentWeapon;
 
     private void Start()
     {
