@@ -7,25 +7,29 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup _startPanel;
     [SerializeField] private AudioSource _buttonClick;
-    [SerializeField] private AudioClip _effectClick;
 
     private void Start()
     {
         StartCoroutine(_startPanel.FadeIn());
     }
 
-    private IEnumerator PlaySound(AudioSource sound, AudioClip soundEffect)
+    private void FixedUpdate()
     {
-        sound.PlayOneShot(soundEffect);
-        yield return new WaitForSeconds(soundEffect.length); ;
+        StartGame();
     }
 
     public void StartGame()
     {
         if (Input.anyKeyDown)
         {
-            StartCoroutine(PlaySound(_buttonClick, _effectClick));
-            SceneManager.LoadScene(1);
+            StartCoroutine(PlaySound(_buttonClick));
         }
+    }
+
+    private IEnumerator PlaySound(AudioSource sound)
+    {
+        sound.Play();
+        yield return new WaitForSeconds(sound.clip.length);
+        SceneManager.LoadScene(1);
     }
 }

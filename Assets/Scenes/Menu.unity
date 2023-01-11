@@ -1726,6 +1726,7 @@ MonoBehaviour:
   _crateSpawnPoints: {fileID: 1443510102}
   _cratePrefabs:
   - {fileID: 4516038054456177591, guid: 190f654d93937de40958f7ee02c294e4, type: 3}
+  _weaponLabel: {fileID: 0}
 --- !u!1 &682129480
 GameObject:
   m_ObjectHideFlags: 0

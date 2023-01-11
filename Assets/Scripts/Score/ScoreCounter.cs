@@ -24,9 +24,8 @@ public class ScoreCounter : MonoBehaviour
         _score.text = _playerScore.ToString();
     }
 
-    private void ChangeScoreNumber(List<Crate> crates)
+    private void ChangeScoreNumber(Crate crate)
     {
-        foreach (Crate crate in crates)
-            _playerScore += crate.Score;
+        _playerScore += crate.Score;
     }
 }
