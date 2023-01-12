@@ -1,11 +1,10 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Animator), typeof(AudioSource))]
+[RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
     [Header("Configurations")]
     [SerializeField] private Animator _animator;
-    [SerializeField] private AudioSource _dieSound;
 
     [Header("Weapons")]
     [SerializeField] private Transform _weaponParent;
@@ -13,12 +12,12 @@ public class Player : MonoBehaviour
 
     private float _lastShotTime;
     private Weapon _currentWeapon;
+    private SoundManager _soundManager;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _dieSound = GetComponent<AudioSource>();
-
+        _soundManager = ServiceLocator.Get<SoundManager>();
         _weapons = _weaponParent.GetComponentsInChildren<Weapon>(true);
         _currentWeapon = _weapons[0];
     }

@@ -6,18 +6,22 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup _startPanel;
-    [SerializeField] private AudioSource _buttonClick;
+    [SerializeField] private SoundManager _sounds;
+
+    private SoundManager _soundManager;
 
     private void Start()
     {
+        DontDestroyOnLoad(_sounds);
         StartCoroutine(_startPanel.FadeIn());
+        _soundManager = ServiceLocator.Get<SoundManager>();
     }
 
     private void Update()
     {
         if (Input.anyKeyDown)
         {
-            StartCoroutine(PlaySound(_buttonClick));
+            StartCoroutine(PlaySound(_soundManager.Play(SoundManager.Sounds.Click)));
         }
     }
 
