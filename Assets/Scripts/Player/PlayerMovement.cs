@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private GroundDetector _groundDetector;
+    private SoundManager _soundManager;
     private bool _isFacingRight = true;
 
     public bool isFacingRight;
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _groundDetector = GetComponent<GroundDetector>();
+        _soundManager = ServiceLocator.Get<SoundManager>();
     }
 
     private void Update()
@@ -36,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
 
         Move(horizontalInput, _speed);
         if (jumpInput && isGrounded)
+        {
+            _soundManager.Play(SoundManager.Sounds.Jump);
             Jump(_jumpForce, groundedState, isGrounded);
+        }
 
         if (jumpInputReleased && _rigidbody.velocity.y > 0)
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
