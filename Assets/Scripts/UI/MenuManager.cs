@@ -21,11 +21,6 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void StartGame()
-    {
-        
-    }
-
     private IEnumerator PlaySound(AudioSource sound)
     {
         sound.Play();
