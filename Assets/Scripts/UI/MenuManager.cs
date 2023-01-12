@@ -13,17 +13,17 @@ public class MenuManager : MonoBehaviour
         StartCoroutine(_startPanel.FadeIn());
     }
 
-    private void FixedUpdate()
-    {
-        StartGame();
-    }
-
-    public void StartGame()
+    private void Update()
     {
         if (Input.anyKeyDown)
         {
             StartCoroutine(PlaySound(_buttonClick));
         }
+    }
+
+    public void StartGame()
+    {
+        
     }
 
     private IEnumerator PlaySound(AudioSource sound)
