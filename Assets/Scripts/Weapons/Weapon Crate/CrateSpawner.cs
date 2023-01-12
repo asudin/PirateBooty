@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,10 +9,11 @@ public class CrateSpawner : ObjectPool<Crate>
     [Header("Crate Spawn Settings")]
     [SerializeField] private Transform _crateSpawnPoints;
     [SerializeField] private List<Crate> _cratePrefabs;
+    [SerializeField] private TMP_Text _weaponLabel;
 
     private Transform[] _crateSpawns;
 
-    public event Action<List<Crate>> Collected;
+    public event Action<Crate> Collected;
 
     private void Start()
     {
@@ -57,8 +59,8 @@ public class CrateSpawner : ObjectPool<Crate>
         crate.transform.position = spawnPoint;
     }
 
-    public void InvokeEvent()
+    public void InvokeEvent(Crate crate)
     {
-        Collected?.Invoke(_cratePrefabs);
+        Collected?.Invoke(crate);
     }
 }

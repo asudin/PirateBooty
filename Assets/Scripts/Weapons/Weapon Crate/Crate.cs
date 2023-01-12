@@ -14,6 +14,7 @@ public class Crate : MonoBehaviour
     private Tween _tween;
 
     public int Score => _score;
+    public string WeaponLabel => _weaponLabel.text;
 
     public int GetRandomWeaponIndex()
     {
@@ -46,7 +47,7 @@ public class Crate : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out Player player))
-            _spawner.InvokeEvent();
+            _spawner.InvokeEvent(this);
     }
 
     public void SetSpawner(CrateSpawner spawner)
