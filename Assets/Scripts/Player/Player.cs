@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -5,6 +6,8 @@ public class Player : MonoBehaviour
 {
     [Header("Configurations")]
     [SerializeField] private Animator _animator;
+    [SerializeField] private ParticleSystem _deathParticles;
+    [SerializeField] private PlayerSpawner _spawner;
 
     [Header("Weapons")]
     [SerializeField] private Transform _weaponParent;
@@ -14,10 +17,13 @@ public class Player : MonoBehaviour
     private Weapon _currentWeapon;
     private SoundManager _soundManager;
 
+    public event Action GameOver;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _soundManager = ServiceLocator.Get<SoundManager>();
+        _spawner = ServiceLocator.Get<PlayerSpawner>();
         _weapons = _weaponParent.GetComponentsInChildren<Weapon>(true);
         _currentWeapon = _weapons[0];
     }
@@ -25,13 +31,6 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Shoot();
-    }
-
-    private void ChangeWeapon(int randomWeaponIndex)
-    {
-        _currentWeapon.gameObject.SetActive(false);
-        _currentWeapon = _weapons[randomWeaponIndex];
-        _currentWeapon.gameObject.SetActive(true);
     }
 
     private void Shoot()
@@ -44,16 +43,21 @@ public class Player : MonoBehaviour
             }
         _lastShotTime -= Time.deltaTime;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void ChangeWeapon(int randomWeaponIndex)
     {
-        if (collision.collider.TryGetComponent(out Enemy enemy))
-            Destroy(gameObject);
+        _currentWeapon.gameObject.SetActive(false);
+        _currentWeapon = _weapons[randomWeaponIndex];
+        _currentWeapon.gameObject.SetActive(true);
+    }
 
-        if (collision.gameObject.TryGetComponent(out Crate crate))
-        {
-            ChangeWeapon(crate.GetRandomWeaponIndex());
-            crate.gameObject.SetActive(false);
-        }
+    public void ResetPlayer()
+    {
+        _spawner.Spawn(this);
+    }
+
+    public void Die()
+    {
+        Instantiate(_deathParticles, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

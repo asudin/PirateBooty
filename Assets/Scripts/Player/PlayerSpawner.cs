@@ -7,10 +7,11 @@ public class PlayerSpawner : MonoBehaviour
 
     private void Start()
     {
+        ServiceLocator.Register(this);
         Spawn(_player);
     }
 
-    private void Spawn(Player _player)
+    public void Spawn(Player _player)
     {
         Instantiate(_player, _spawnPosition);
     }
