@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
@@ -10,7 +8,6 @@ public class WeaponLabelDisplayer : MonoBehaviour
     [SerializeField] private TMP_Text _weaponLabel;
 
     private Tween _tween;
-    private Coroutine _coroutine;
 
     private void OnEnable()
     {
@@ -32,10 +29,5 @@ public class WeaponLabelDisplayer : MonoBehaviour
             _tween.Kill();
 
         _tween = _weaponLabel.transform.DOLocalMoveY(1f, 0.6f).OnComplete(() => _weaponLabel.gameObject.SetActive(false));
-    }
-
-    private void ResetPosition()
-    {
-        _weaponLabel.transform.position = transform.position;
     }
 }
