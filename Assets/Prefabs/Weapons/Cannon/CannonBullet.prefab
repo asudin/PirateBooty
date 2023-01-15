@@ -102,9 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
-  _speed: 10
+  _speed: 8
   _animator: {fileID: -6005914374019038168}
   _destroySound: {fileID: 6669954926513575220}
+  destroyTimerDelay: 0.2
 --- !u!58 &3852019411581690250
 CircleCollider2D:
   m_ObjectHideFlags: 0

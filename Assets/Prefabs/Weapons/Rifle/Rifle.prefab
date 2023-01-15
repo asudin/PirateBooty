@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3892745038670319511}
   - component: {fileID: 6371056248287512609}
   - component: {fileID: -545067851135329105}
-  - component: {fileID: -6674308414880282306}
+  - component: {fileID: 2364712662097293542}
   m_Layer: 0
   m_Name: Rifle
   m_TagString: Untagged
@@ -235,7 +235,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-6674308414880282306
+--- !u!114 &2364712662097293542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,10 +244,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6176137675850942715}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba7cf6414765ff94a86e08ec27c15f42, type: 3}
+  m_Script: {fileID: 11500000, guid: 2007b7a0227a0fc4195398c8f71b6de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponData: {fileID: 11400000, guid: da5c5ec00f03c22458bb9e072ec25f15, type: 2}
   _shootingPoint: {fileID: 8485619321045189362}
   _animator: {fileID: -545067851135329105}
-  _shootingSound: {fileID: 6371056248287512609}

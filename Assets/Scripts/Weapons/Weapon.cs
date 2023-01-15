@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] private WeaponData _weaponData;
 
@@ -9,16 +9,21 @@ public class Weapon : MonoBehaviour
 
     [Header("Effects")]
     [SerializeField] private Animator _animator;
-    [SerializeField] private AudioSource _shootingSound;
+    private SoundManager _soundManager;
 
-    public AudioSource ShootingSound => _shootingSound;
+    public SoundManager SoundManager => _soundManager;
     public Animator WeaponAnimator => _animator;
     public WeaponData WeaponData => _weaponData;
 
-    public void Shoot()
+    private void Awake()
     {
-        WeaponAnimator.SetTrigger("isShooting");
-        ShootingSound.Play();
-        Instantiate(_weaponData.Bullet, _shootingPoint.transform.position, transform.rotation);
+        _soundManager = ServiceLocator.Get<SoundManager>();
+    }
+
+    public abstract void Shoot();
+
+    public void ShootBullet(float shootingAngle)
+    {
+        Instantiate(_weaponData.Bullet, _shootingPoint.transform.position, Quaternion.Euler(0f, 0f, _shootingPoint.eulerAngles.z + shootingAngle));
     }
 }
