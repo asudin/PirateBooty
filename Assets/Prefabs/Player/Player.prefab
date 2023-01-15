@@ -4840,8 +4840,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2592060961564021642}
   - {fileID: 2592060962218116508}
+  - {fileID: 2592060961564021642}
   - {fileID: 2592060961317540285}
   m_Father: {fileID: 6718907996035516860}
   m_RootOrder: 1
@@ -5225,7 +5225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9135132446255607064, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9135132446255607064, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5351,9 +5351,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rifle
       objectReference: {fileID: 0}
+    - target: {fileID: 6176137675850942715, guid: 29af52b1bef214947b30877f3a81b5e9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9135132446255607064, guid: 29af52b1bef214947b30877f3a81b5e9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9135132446255607064, guid: 29af52b1bef214947b30877f3a81b5e9, type: 3}
       propertyPath: m_LocalPosition.x

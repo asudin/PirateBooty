@@ -1,11 +1,9 @@
-using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Crate : MonoBehaviour
 {
     [SerializeField] private Weapon[] _weapons;
-    [SerializeField] private TMP_Text _weaponLabel;
     [SerializeField] private ParticleSystem _weaponPickedEffect;
 
     private int _generatedIndex;
