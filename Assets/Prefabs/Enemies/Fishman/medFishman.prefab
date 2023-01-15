@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 9182528761879642226}
   - component: {fileID: 6399946305442563674}
   - component: {fileID: 7180429558574066154}
+  - component: {fileID: 5767466984597696617}
   m_Layer: 7
   m_Name: medFishman
   m_TagString: Untagged
@@ -173,7 +174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 01dd80fd6f74bf64b8209dcfa7e367cf, type: 2}
-  _enragedVariant: {fileID: 9182528761879642226, guid: ee0c974ca29e3ee408226ea01d8c1212, type: 3}
 --- !u!114 &6399946305442563674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,3 +200,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions: []
+--- !u!114 &5767466984597696617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417725477532620238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15298f58a7b4eba49ab81ebd5e0cdd83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enragedVariant: {fileID: 9182528761879642226, guid: ee0c974ca29e3ee408226ea01d8c1212, type: 3}

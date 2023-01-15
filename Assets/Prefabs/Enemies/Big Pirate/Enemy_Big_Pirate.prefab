@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5347328821395448141}
   - component: {fileID: 5852779629857474416}
   - component: {fileID: -7143912733682821434}
+  - component: {fileID: -4053096828574104845}
   m_Layer: 7
   m_Name: Enemy_Big_Pirate
   m_TagString: Untagged
@@ -173,7 +174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 2c08f833eb8657146b048033b6e47cc9, type: 2}
-  _enragedVariant: {fileID: 5347328821395448141, guid: 6e16a76ffbab78b4ebebf339934f07a7, type: 3}
 --- !u!114 &5852779629857474416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,3 +200,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions: []
+--- !u!114 &-4053096828574104845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4605780586848494012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15298f58a7b4eba49ab81ebd5e0cdd83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enragedVariant: {fileID: 5347328821395448141, guid: 6e16a76ffbab78b4ebebf339934f07a7, type: 3}

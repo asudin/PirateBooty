@@ -5,23 +5,14 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyData _enemyData;
 
-    [Header("Enemy Settings")]
-    [SerializeField] private Enemy _enragedVariant;
+    private EnemyCollisionHandler _collisionHandler;
 
+    public EnemyCollisionHandler CollisionHandler => _collisionHandler;
     public EnemyData EnemyData => _enemyData;
 
-    public event Action<Enemy, Enemy> OnChestAreaEntered;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Awake()
     {
-        if (collision.TryGetComponent(out Chest chest))
-        {
-            gameObject.SetActive(false);
-            OnChestAreaEntered?.Invoke(_enragedVariant, this);
-        }
-
-        if (collision.TryGetComponent(out Bullet bullet))
-            gameObject.SetActive(false);
+        _collisionHandler = GetComponent<EnemyCollisionHandler>();
     }
 }
 

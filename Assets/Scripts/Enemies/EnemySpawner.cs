@@ -42,7 +42,7 @@ public class EnemySpawner : ObjectPool<Enemy>
             if (TryGetObjectInPool(out Enemy enemy))
             {
                 SetEnemy(enemy, RandomSpawnPosition(enemySpawns));
-                enemy.OnChestAreaEntered += OnChestAreaReached;
+                enemy.CollisionHandler.OnChestAreaEntered += OnChestAreaReached;
             }
         }
     }
@@ -66,7 +66,7 @@ public class EnemySpawner : ObjectPool<Enemy>
     private void OnChestAreaReached(Enemy enragedEnemy, Enemy destroyedEnemy)
     {
         Instantiate(enragedEnemy, RandomSpawnPosition(_enemySpawns), Quaternion.identity);
-        destroyedEnemy.OnChestAreaEntered -= OnChestAreaReached;
+        destroyedEnemy.CollisionHandler.OnChestAreaEntered -= OnChestAreaReached;
     }
 
     public void ResetEnemyPool()

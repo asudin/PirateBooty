@@ -9,10 +9,17 @@ public class Crate : MonoBehaviour
     private int _generatedIndex;
     private int _score = 1;
     private CrateSpawner _spawner;
+    private BoxCollider2D _collider;
 
     public int Score => _score;
     public int GeneratedIndex => _generatedIndex;
     public string WeaponLabel => _weapons[_generatedIndex].WeaponData.Label;
+    public BoxCollider2D Collider => _collider;
+
+    private void Awake()
+    {
+        _collider = GetComponent<BoxCollider2D>();
+    }
 
     public int GetRandomWeaponIndex()
     {
