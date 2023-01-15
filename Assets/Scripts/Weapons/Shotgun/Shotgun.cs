@@ -13,11 +13,16 @@ public class Shotgun : Weapon
 
         for (int i = 0; i < _pelletCount; i++)
         {
-            float minAngle = 15f;
-            float randomAngle = Random.Range(minAngle, WeaponData.ProjectileAngle);
-            float rotation = rotations[i] + randomAngle;
+            float minAngle = 10f;
+            float maxAngle = WeaponData.ProjectileAngle;
+            float randomAngle = Random.Range(minAngle, maxAngle);
+            rotations[i] = randomAngle;
+        }
+
+        for (int i = 0; i < _pelletCount; i++)
+        {
             WeaponAnimator.SetTrigger("isShooting");
-            ShootBullet(rotation);
+            ShootBullet(rotations[i]);
         }
 
         SoundManager.Play(SoundManager.Sounds.Pellets);
