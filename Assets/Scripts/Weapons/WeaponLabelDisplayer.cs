@@ -6,6 +6,7 @@ public class WeaponLabelDisplayer : MonoBehaviour
 {
     [SerializeField] private CrateSpawner _spawner;
     [SerializeField] private TMP_Text _weaponLabel;
+    [SerializeField] private Player _player;
 
     private Tween _tween;
 
@@ -22,7 +23,7 @@ public class WeaponLabelDisplayer : MonoBehaviour
     private void ShowInfo(Crate crate)
     {
         _weaponLabel.gameObject.SetActive(true);
-        _weaponLabel.text = crate.WeaponLabel;
+        _weaponLabel.text = _player.GetCurrentWeaponLabel();
         transform.position = crate.transform.position;
 
         if (_tween != null)

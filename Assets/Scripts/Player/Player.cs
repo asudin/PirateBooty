@@ -49,6 +49,11 @@ public class Player : MonoBehaviour
         _currentWeapon.gameObject.SetActive(true);
     }
 
+    public string GetCurrentWeaponLabel()
+    {
+        return _currentWeapon.WeaponData.Label;
+    }
+
     public void Spawn()
     {
         Instantiate(_deathParticles, transform.position, Quaternion.identity);

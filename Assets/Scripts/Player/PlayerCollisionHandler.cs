@@ -18,8 +18,6 @@ public class PlayerCollisionHandler : MonoBehaviour
 
         if (collision.gameObject.TryGetComponent(out Crate crate))
         {
-            _player.ChangeWeapon(crate.GetRandomWeaponIndex());
-            crate.gameObject.SetActive(false);
         }
     }
 }
