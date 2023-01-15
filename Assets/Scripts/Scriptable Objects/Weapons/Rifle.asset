@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65c6603fa4c98db48bf18ac472480fb3, type: 3}
-  m_Name: Test A
+  m_Name: Rifle
   m_EditorClassIdentifier: 
-  _label: Test A
-  _shootingCooldown: 0.5
+  _label: Rifle
+  _shootingCooldown: 0.2
   _isUsed: 0
   _projectileAngle: 0
-  _bullet: {fileID: -322160404541094087, guid: 11ca4ce7af1247d499c5ebf920c1a564, type: 3}
+  _bullet: {fileID: -322160404541094087, guid: 7170f60f0dac92f43963deca3cc9e759, type: 3}

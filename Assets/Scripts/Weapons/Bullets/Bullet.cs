@@ -10,7 +10,6 @@ public class Bullet : MonoBehaviour
 
     [Header("Effects")]
     [SerializeField] private Animator _animator;
-    [SerializeField] private AudioSource _destroySound;
 
     public void Move()
     {
@@ -29,14 +28,12 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Enemy enemy))
         {
-            _destroySound.Play();
             DestroyBullet();
         }
 
         if (collision.gameObject.TryGetComponent(out Wall wall) ||
             collision.gameObject.TryGetComponent(out Ground ground))
         {
-            _destroySound.Play();
             DestroyBullet();
         }
     }
