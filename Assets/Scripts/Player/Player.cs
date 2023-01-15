@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        GameOver?.Invoke();
         Instantiate(_deathParticles, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

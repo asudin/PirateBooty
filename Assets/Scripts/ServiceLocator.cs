@@ -5,9 +5,12 @@ public static class ServiceLocator
 {
     private static readonly Dictionary<Type, object> _services = new Dictionary<Type, object>();
 
+    public static bool IsObjectRegistered = false;
+
     public static void Register<T>(T service)
     {
         _services.Add(typeof(T), service);
+        IsObjectRegistered = true;
     }
 
     public static T Get<T>()
