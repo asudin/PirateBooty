@@ -5040,7 +5040,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 6718907996035516862}
   _deathParticles: {fileID: 7559445700963679790, guid: 660222f4d03864f4289ee6ad45e65066, type: 3}
-  _spawner: {fileID: 0}
   _weaponParent: {fileID: 6718907995751179115}
 --- !u!114 &6718907996035516859
 MonoBehaviour:

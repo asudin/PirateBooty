@@ -25,4 +25,12 @@ public class ObjectPool<T> : MonoBehaviour where T : MonoBehaviour
         result = gameObject;
         return result != null;
     }
+
+    protected void ResetPool()
+    {
+        foreach (var item in _pool)
+        {
+            item.gameObject.SetActive(false);
+        }
+    }
 }

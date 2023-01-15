@@ -1,57 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
+    [SerializeField] private Player _player;
+
+    [Header("UI Screens")]
     [SerializeField] private GameOverScreen _gameOverScreen;
+
+    [Header("Spawners")]
     [SerializeField] private PlayerSpawner _playerSpawner;
+    [SerializeField] private EnemySpawner _enemySpawner;
+    [SerializeField] private CrateSpawner _crateSpawner;
 
-    private Player _player;
-
-    private void Awake()
-    {
-        //_player = ServiceLocator.Get<Player>();
-    }
+    private bool _isGameOver = false;
 
     private void OnEnable()
     {
         _player.GameOver += OnGameOver;
+        _gameOverScreen.ShowCanvas += OnRestartGame;
     }
 
     private void OnDisable()
     {
         _player.GameOver -= OnGameOver;
+        _gameOverScreen.ShowCanvas -= OnRestartGame;
     }
-
     private void Update()
     {
-        if (_playerSpawner.IsPlayerInstantiated)
+        if (_isGameOver)
+            RestartGame();
+    }
+
+
+    private void OnRestartGame()
+    {
+        _isGameOver = true;
+    }
+
+    private void RestartGame()
+    {
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Space))
         {
-            if (ServiceLocator.Get<Player>() != null)
-            {
-                Debug.Log($"RRRRRR = TRUE");
-                _player = ServiceLocator.Get<Player>();
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
-        Debug.Log($"IS: {_player}");
-        Debug.Log($"Registered?: {ServiceLocator.Get<Player>()}");
-    }
-
-    private void OnRestartGameButtonsClick()
-    {
-        _gameOverScreen.Close();
-        StartGame();
-    }
-
-    private void StartGame()
-    {
-        _player.ResetPlayer();
     }
 
     public void OnGameOver()
     {
         _gameOverScreen.Open();
+        _gameOverScreen.ShowFinalScore();
     }
 }

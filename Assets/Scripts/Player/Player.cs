@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     [Header("Configurations")]
     [SerializeField] private Animator _animator;
     [SerializeField] private ParticleSystem _deathParticles;
-    [SerializeField] private PlayerSpawner _spawner;
 
     [Header("Weapons")]
     [SerializeField] private Transform _weaponParent;
@@ -23,7 +22,6 @@ public class Player : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _soundManager = ServiceLocator.Get<SoundManager>();
-        _spawner = ServiceLocator.Get<PlayerSpawner>();
         _weapons = _weaponParent.GetComponentsInChildren<Weapon>(true);
         _currentWeapon = _weapons[0];
     }
@@ -43,6 +41,7 @@ public class Player : MonoBehaviour
             }
         _lastShotTime -= Time.deltaTime;
     }
+
     public void ChangeWeapon(int randomWeaponIndex)
     {
         _currentWeapon.gameObject.SetActive(false);
@@ -50,15 +49,16 @@ public class Player : MonoBehaviour
         _currentWeapon.gameObject.SetActive(true);
     }
 
-    public void ResetPlayer()
+    public void Spawn()
     {
-        _spawner.Spawn(this);
+        Instantiate(_deathParticles, transform.position, Quaternion.identity);
+        gameObject.SetActive(true);
     }
 
     public void Die()
     {
         GameOver?.Invoke();
         Instantiate(_deathParticles, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

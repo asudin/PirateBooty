@@ -6,21 +6,21 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private Transform _spawnPosition;
 
-    public bool IsPlayerInstantiated = false;
-
     private void Start()
     {
-        ServiceLocator.Register(this);
+        //ServiceLocator.Register(this);
         Spawn(_player);
     }
 
-    public void Spawn(Player _player)
+    public void Spawn(Player player)
     {
-        Player player = Instantiate(_player, _spawnPosition);
-        Debug.Log($"Spawned player: {player}");
-        ServiceLocator.Register(player);
-        IsPlayerInstantiated = true;
+        ResetPlayer(player);
+        player.Spawn();
+    }
 
-        Debug.Log($"Registered is: {ServiceLocator.Get<Player>()}");
+    public void ResetPlayer(Player player)
+    {
+        player.transform.position = _spawnPosition.transform.position;
+        player.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

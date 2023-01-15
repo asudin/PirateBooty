@@ -7,13 +7,14 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private CanvasGroup _startPanel;
     [SerializeField] private SoundManager _sounds;
+    [SerializeField, Tooltip("Higher positive value equals faster fade in/out animation.")] private float _time;
 
     private SoundManager _soundManager;
 
     private void Start()
     {
         DontDestroyOnLoad(_sounds);
-        StartCoroutine(_startPanel.FadeIn());
+        StartCoroutine(_startPanel.FadeIn(_time));
         _soundManager = ServiceLocator.Get<SoundManager>();
     }
 
