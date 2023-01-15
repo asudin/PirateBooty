@@ -68,4 +68,9 @@ public class EnemySpawner : ObjectPool<Enemy>
         Instantiate(enragedEnemy, RandomSpawnPosition(_enemySpawns), Quaternion.identity);
         destroyedEnemy.OnChestAreaEntered -= OnChestAreaReached;
     }
+
+    public void ResetEnemyPool()
+    {
+        ResetPool();
+    }
 }

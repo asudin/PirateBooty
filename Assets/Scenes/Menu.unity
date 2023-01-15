@@ -4314,7 +4314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 933772669}
   m_Layer: 0
-  m_Name: Background
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7929,6 +7929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startPanel: {fileID: 1953944979}
   _sounds: {fileID: 1317319996}
+  _time: 0.5
 --- !u!4 &1277597455
 Transform:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : MonoBehaviour
+public class PlayerMover : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
     private Animator _animator;

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerSpawner : MonoBehaviour
@@ -7,11 +8,19 @@ public class PlayerSpawner : MonoBehaviour
 
     private void Start()
     {
+        //ServiceLocator.Register(this);
         Spawn(_player);
     }
 
-    private void Spawn(Player _player)
+    public void Spawn(Player player)
     {
-        Instantiate(_player, _spawnPosition);
+        ResetPlayer(player);
+        player.Spawn();
+    }
+
+    public void ResetPlayer(Player player)
+    {
+        player.transform.position = _spawnPosition.transform.position;
+        player.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

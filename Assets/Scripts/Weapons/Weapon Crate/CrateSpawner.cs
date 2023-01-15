@@ -63,4 +63,9 @@ public class CrateSpawner : ObjectPool<Crate>
     {
         Collected?.Invoke(crate);
     }
+
+    public void ResetCratePool()
+    {
+        ResetPool();
+    }
 }
