@@ -1,20 +1,19 @@
 using TMPro;
 using UnityEngine;
-using DG.Tweening;
 using Random = UnityEngine.Random;
 
 public class Crate : MonoBehaviour
 {
     [SerializeField] private Weapon[] _weapons;
     [SerializeField] private TMP_Text _weaponLabel;
+    [SerializeField] private ParticleSystem _weaponPickedEffect;
 
     private int _generatedIndex;
     private int _score = 1;
     private CrateSpawner _spawner;
-    private Tween _tween;
 
     public int Score => _score;
-    public string WeaponLabel => _weaponLabel.text;
+    public string WeaponLabel => _weapons[_generatedIndex].WeaponData.Label;
 
     public int GetRandomWeaponIndex()
     {
@@ -24,24 +23,7 @@ public class Crate : MonoBehaviour
             currentIndex = Random.Range(0, _weapons.Length);
 
         _generatedIndex = currentIndex;
-        ShowInfo();
         return _generatedIndex;
-    }
-
-    private void ShowInfo()
-    {
-        _weaponLabel.text = _weapons[_generatedIndex].WeaponData.Label;
-        ResetPosition();
-        _weaponLabel.gameObject.SetActive(true);
-
-        if (_tween != null)
-            _tween.Kill();
-        _tween = _weaponLabel.transform.DOLocalMoveY(0.1f, 0.6f).OnComplete(() => _weaponLabel.gameObject.SetActive(false));
-    }
-
-    private void ResetPosition()
-    {
-        _weaponLabel.transform.position = transform.position;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
