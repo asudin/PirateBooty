@@ -5221,7 +5221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6176137675850942715, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9135132446255607064, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}
       propertyPath: m_RootOrder
@@ -5349,11 +5349,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6176137675850942715, guid: 29af52b1bef214947b30877f3a81b5e9, type: 3}
       propertyPath: m_Name
-      value: test A
-      objectReference: {fileID: 0}
-    - target: {fileID: 6176137675850942715, guid: 29af52b1bef214947b30877f3a81b5e9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: Rifle
       objectReference: {fileID: 0}
     - target: {fileID: 9135132446255607064, guid: 29af52b1bef214947b30877f3a81b5e9, type: 3}
       propertyPath: m_RootOrder
