@@ -6,13 +6,13 @@ public class GroundDetector : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Ground>(out Ground ground))
+        if (collision.gameObject.TryGetComponent(out Ground ground))
             IsGrounded = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Ground>(out Ground ground))
+        if (collision.gameObject.TryGetComponent(out Ground ground))
             IsGrounded = false;
     }
 }
