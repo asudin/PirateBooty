@@ -12717,6 +12717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 667643695}
   _weaponLabel: {fileID: 1858720673}
+  _player: {fileID: 655232015}
 --- !u!222 &425339364
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13232,6 +13233,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 668342772}
     m_Modifications:
+    - target: {fileID: 614837311813203038, guid: 49277a9a880b6694580407baec460bc9, type: 3}
+      propertyPath: m_Name
+      value: Shotgun
+      objectReference: {fileID: 0}
     - target: {fileID: 6718907996035516860, guid: 49277a9a880b6694580407baec460bc9, type: 3}
       propertyPath: m_RootOrder
       value: 3
