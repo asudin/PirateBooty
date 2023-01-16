@@ -12906,6 +12906,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  Registered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &546780594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13335,6 +13338,10 @@ PrefabInstance:
     - target: {fileID: 6718907996035516863, guid: 49277a9a880b6694580407baec460bc9, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958523295796572565, guid: 49277a9a880b6694580407baec460bc9, type: 3}
+      propertyPath: _collisionShakeDuration
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49277a9a880b6694580407baec460bc9, type: 3}
@@ -23851,6 +23858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: {fileID: 2013159422}
+  _player: {fileID: 655232015}
   _spawner: {fileID: 667643695}
 --- !u!1 &2070582173
 GameObject:
