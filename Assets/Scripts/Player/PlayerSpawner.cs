@@ -8,7 +8,6 @@ public class PlayerSpawner : MonoBehaviour
 
     private void Start()
     {
-        //ServiceLocator.Register(this);
         Spawn(_player);
     }
 

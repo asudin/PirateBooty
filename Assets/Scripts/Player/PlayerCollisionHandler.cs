@@ -10,6 +10,12 @@ public class PlayerCollisionHandler : MonoBehaviour
     private void Start()
     {
         _player = GetComponent<Player>();
+        _shaker = FindObjectOfType<ScreenShake>();
+        _shaker.Registered.AddListener(OnScreenShakeRegistered);
+    }
+
+    private void OnScreenShakeRegistered()
+    {
         _shaker = ServiceLocator.Get<ScreenShake>();
     }
 

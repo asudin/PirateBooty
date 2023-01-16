@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class ScoreCounter : MonoBehaviour
 {
     [SerializeField] private TMP_Text _score;
+    [SerializeField] private Player _player;
     [SerializeField] private CrateSpawner _spawner;
 
     private static int _playerScore = 0;
@@ -15,11 +16,13 @@ public class ScoreCounter : MonoBehaviour
     private void OnEnable()
     {
         _spawner.Collected += ChangeScoreNumber;
+        _player.GameOver += ResetScore;
     }
 
     private void OnDisable()
     {
         _spawner.Collected -= ChangeScoreNumber;
+        _player.GameOver -= ResetScore;
     }
 
     private void Update()
@@ -37,5 +40,10 @@ public class ScoreCounter : MonoBehaviour
     {
         if (_playerScore > _bestScore)
             _bestScore = _playerScore;
+    }
+
+    private void ResetScore()
+    {
+        _playerScore = 0;
     }
 }
