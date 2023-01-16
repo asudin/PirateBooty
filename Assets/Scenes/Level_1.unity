@@ -12906,9 +12906,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  Registered:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &546780594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13286,6 +13283,10 @@ PrefabInstance:
     - target: {fileID: 614837311813203038, guid: 49277a9a880b6694580407baec460bc9, type: 3}
       propertyPath: m_Name
       value: Shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718907996035516859, guid: 49277a9a880b6694580407baec460bc9, type: 3}
+      propertyPath: _speed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6718907996035516860, guid: 49277a9a880b6694580407baec460bc9, type: 3}
       propertyPath: m_RootOrder
@@ -23971,7 +23972,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 5a37ec9b8b2b2f1418d86fa282528385, type: 2}
-  m_audioClip: {fileID: 8300000, guid: d1c805b44c8378041b683c656445d016, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 50b7b73512ec60946a231b22e1ac3a19, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

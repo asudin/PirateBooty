@@ -4,6 +4,6 @@ public class Cannon : Weapon
     {
         WeaponAnimator.SetTrigger("isShooting");
         ShootBullet(WeaponData.ProjectileAngle);
-        SoundManager.Play(SoundManager.Sounds.Explosion);
+        SoundManager.Play(SoundManager.Sounds.Cannon);
     }
 }

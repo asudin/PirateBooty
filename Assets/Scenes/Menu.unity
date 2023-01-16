@@ -8011,7 +8011,6 @@ GameObject:
   - component: {fileID: 1317320000}
   - component: {fileID: 1317319999}
   - component: {fileID: 1317319998}
-  - component: {fileID: 1317319997}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -8239,132 +8238,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sounds:
-  - Label: Button Click
+  - Label: Rifle Shot
     Name: 0
-    Clip: {fileID: 8300000, guid: 33eab3dda93495f49a74c1c158204ec3, type: 3}
-  - Label: Player Jump
+    Clip: {fileID: 8300000, guid: 46db4005e0a224d428bd901b9a800b8c, type: 3}
+  - Label: Cannon Shot
     Name: 1
-    Clip: {fileID: 8300000, guid: 23f3721a27f0c154289dc7c38d0daf3d, type: 3}
-  - Label: Player Death
+    Clip: {fileID: 8300000, guid: 1a537ee5c11cc574fa832d25e30c6f62, type: 3}
+  - Label: Shotgun Shot
     Name: 2
-    Clip: {fileID: 0}
-  - Label: Enemy Death
+    Clip: {fileID: 8300000, guid: 569b1c899be07f74c8c8c60d46d7b458, type: 3}
+  - Label: Player Jump
     Name: 3
-    Clip: {fileID: 0}
-  - Label: Explosion
+    Clip: {fileID: 8300000, guid: 98ad0062b357bae4bac539af6bff443c, type: 3}
+  - Label: Player Death
     Name: 4
-    Clip: {fileID: 8300000, guid: d466dee2864e0ec4b858b096fd1536b9, type: 3}
-  - Label: Shotgun Pellets
+    Clip: {fileID: 8300000, guid: 7ef75b640ea963343ab0c7aa09935fc3, type: 3}
+  - Label: Enemy Hit
     Name: 5
-    Clip: {fileID: 8300000, guid: d466dee2864e0ec4b858b096fd1536b9, type: 3}
-  - Label: Rifle Bullets
+    Clip: {fileID: 8300000, guid: 8d61afeeacfe35d43b69a876c22af3da, type: 3}
+  - Label: Chest Reached By Enemy
     Name: 6
-    Clip: {fileID: 8300000, guid: d466dee2864e0ec4b858b096fd1536b9, type: 3}
-  - Label: Weapon Crate Picked Up
+    Clip: {fileID: 8300000, guid: 1a08c8f4bdd26d441a587243e5678ae1, type: 3}
+  - Label: Button Clicked
     Name: 7
-    Clip: {fileID: 0}
-  - Label: Chest Reached By Enemies
+    Clip: {fileID: 8300000, guid: 33eab3dda93495f49a74c1c158204ec3, type: 3}
+  - Label: Crate Picked By Player
     Name: 8
-    Clip: {fileID: 0}
-  - Label: Game Over Screen
-    Name: 9
-    Clip: {fileID: 0}
---- !u!82 &1317319997
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317319992}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 5a37ec9b8b2b2f1418d86fa282528385, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 0.2
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+    Clip: {fileID: 8300000, guid: d984ef910060b754cac8950eaceb7584, type: 3}
 --- !u!82 &1317319998
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21617,7 +21517,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 5a37ec9b8b2b2f1418d86fa282528385, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 61c234aead3212a4a9bc27075d20580b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c159f4dca34d91c47b60a80e7ea6dc3b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5ab9004fb9dab42aa3a96002d7d995, type: 3}
+  m_Name: medFrog
+  m_EditorClassIdentifier: 
+  _enemyName: medFrog
+  Health: 1
+  Speed: 3.5
+  IsEnraged: 0
+  _enemyPrefab: {fileID: 1417725477532620238, guid: dce961400dcf67249abf1b66aaf5de06, type: 3}

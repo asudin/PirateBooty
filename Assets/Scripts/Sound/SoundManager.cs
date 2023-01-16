@@ -44,15 +44,14 @@ public class SoundManager : MonoBehaviour
 
     public enum Sounds
     {
-        Click,
-        Jump,
+        Rifle,
+        Cannon,
+        Shotgun,
+        PlayerJump,
         PlayerDeath,
-        EnemyDeath,
-        Explosion,
-        Pellets,
-        Bullet,
-        CratePicked,
+        EnemyHit,
         ChestReached,
-        GameOver
+        ButtonClick,
+        CratePicked
     }
 }

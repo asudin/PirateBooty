@@ -25,6 +25,6 @@ public class Shotgun : Weapon
             ShootBullet(rotations[i]);
         }
 
-        SoundManager.Play(SoundManager.Sounds.Pellets);
+        SoundManager.Play(SoundManager.Sounds.Shotgun);
     }
 }

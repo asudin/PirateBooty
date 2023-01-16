@@ -22,7 +22,7 @@ public class MenuManager : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            StartCoroutine(PlaySound(_soundManager.Play(SoundManager.Sounds.Click)));
+            StartCoroutine(PlaySound(_soundManager.Play(SoundManager.Sounds.ButtonClick)));
         }
     }
 

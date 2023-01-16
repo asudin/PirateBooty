@@ -39,7 +39,7 @@ public class PlayerMover : MonoBehaviour
 
         if (jumpInput && IsGrounded())
         {
-            _soundManager.Play(SoundManager.Sounds.Jump);
+            _soundManager.Play(SoundManager.Sounds.PlayerJump);
             Jump(_jumpForce, groundedState, IsGrounded());
         }
 

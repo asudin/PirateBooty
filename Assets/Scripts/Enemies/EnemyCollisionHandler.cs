@@ -8,6 +8,7 @@ public class EnemyCollisionHandler : MonoBehaviour
 
     private CapsuleCollider2D _enemyCollider;
     private Enemy _enemy;
+    private SoundManager _soundManager;
 
     public event Action<Enemy, Enemy> OnChestAreaEntered;
 
@@ -15,6 +16,7 @@ public class EnemyCollisionHandler : MonoBehaviour
     {
         _enemy = GetComponent<Enemy>();
         _enemyCollider = GetComponent<CapsuleCollider2D>();
+        _soundManager = ServiceLocator.Get<SoundManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,11 +24,15 @@ public class EnemyCollisionHandler : MonoBehaviour
         if (collision.TryGetComponent(out Chest chest))
         {
             gameObject.SetActive(false);
+            _soundManager.Play(SoundManager.Sounds.ChestReached);
             OnChestAreaEntered?.Invoke(_enragedVariant, _enemy);
         }
 
         if (collision.TryGetComponent(out Bullet bullet))
+        {
+            _soundManager.Play(SoundManager.Sounds.EnemyHit);
             gameObject.SetActive(false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

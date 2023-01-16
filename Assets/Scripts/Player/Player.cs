@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
 
     public void ChangeWeapon(int randomWeaponIndex)
     {
+        _soundManager.Play(SoundManager.Sounds.CratePicked);
         _currentWeapon.gameObject.SetActive(false);
         _currentWeapon = _weapons[randomWeaponIndex];
         _currentWeapon.gameObject.SetActive(true);
@@ -63,6 +64,7 @@ public class Player : MonoBehaviour
     public void Die()
     {
         GameOver?.Invoke();
+        _soundManager.Play(SoundManager.Sounds.PlayerDeath);
         Instantiate(_deathParticles, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
     }

@@ -4,6 +4,6 @@ public class Rifle : Weapon
     {
         WeaponAnimator.SetTrigger("isShooting");
         ShootBullet(WeaponData.ProjectileAngle);
-        SoundManager.Play(SoundManager.Sounds.Bullet);
+        SoundManager.Play(SoundManager.Sounds.Rifle);
     }
 }
