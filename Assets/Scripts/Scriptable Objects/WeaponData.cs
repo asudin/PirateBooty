@@ -8,6 +8,7 @@ public class WeaponData : ScriptableObject
 
     [Header("Shooting")] 
     [SerializeField] private float _shootingCooldown;
+    [SerializeField] private float _screenShakeDuration;
     [HideInInspector]
     [SerializeField] private bool _isUsed = false;
 
@@ -17,6 +18,7 @@ public class WeaponData : ScriptableObject
 
     public float ShootingCooldown => _shootingCooldown;
     public float ProjectileAngle => _projectileAngle;
+    public float ShakeDuration => _screenShakeDuration;
     public bool IsUsed => _isUsed;
     public string Label => _label;
     public Bullet Bullet => _bullet;

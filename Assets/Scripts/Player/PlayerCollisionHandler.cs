@@ -2,22 +2,29 @@ using UnityEngine;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
+    [SerializeField] private float _collisionShakeDuration;
+
     private Player _player;
+    private ScreenShake _shaker;
 
     private void Start()
     {
         _player = GetComponent<Player>();
+        _shaker = ServiceLocator.Get<ScreenShake>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.TryGetComponent(out Enemy enemy))
         {
+            _shaker.Shake(_collisionShakeDuration);
             _player.Die();
         }
 
-        if (collision.gameObject.TryGetComponent(out Crate crate))
+        if (collision.collider.TryGetComponent(out Pit pit))
         {
+            _shaker.Shake(_collisionShakeDuration);
+            _player.Die();
         }
     }
 }

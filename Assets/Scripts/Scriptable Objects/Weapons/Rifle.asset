@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _label: Rifle
   _shootingCooldown: 0.2
+  _screenShakeDuration: 0.1
   _isUsed: 0
   _projectileAngle: 0
   _bullet: {fileID: -322160404541094087, guid: 7170f60f0dac92f43963deca3cc9e759, type: 3}
