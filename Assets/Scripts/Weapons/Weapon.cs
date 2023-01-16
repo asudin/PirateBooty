@@ -16,11 +16,20 @@ public abstract class Weapon : MonoBehaviour
     public Animator WeaponAnimator => _animator;
     public WeaponData WeaponData => _weaponData;
 
+    private void OnEnable()
+    {
+        _shaker = FindObjectOfType<ScreenShake>();
+        _shaker.Registered += OnScreenShakeRegistered;
+    }
+
+    private void OnDisable()
+    {
+        _shaker.Registered -= OnScreenShakeRegistered;
+    }
+
     private void Awake()
     {
         _soundManager = ServiceLocator.Get<SoundManager>();
-        _shaker = FindObjectOfType<ScreenShake>();
-        _shaker.Registered.AddListener(OnScreenShakeRegistered);
     }
 
     private void OnScreenShakeRegistered()

@@ -7,11 +7,20 @@ public class PlayerCollisionHandler : MonoBehaviour
     private Player _player;
     private ScreenShake _shaker;
 
-    private void Start()
+    private void OnEnable()
+    {
+        _shaker = FindObjectOfType<ScreenShake>();
+        _shaker.Registered += OnScreenShakeRegistered;
+    }
+
+    private void OnDisable()
+    {
+        _shaker.Registered -= OnScreenShakeRegistered;
+    }
+
+    private void Awake()
     {
         _player = GetComponent<Player>();
-        _shaker = FindObjectOfType<ScreenShake>();
-        _shaker.Registered.AddListener(OnScreenShakeRegistered);
     }
 
     private void OnScreenShakeRegistered()

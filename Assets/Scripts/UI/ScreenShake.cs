@@ -1,13 +1,14 @@
+using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class ScreenShake : MonoBehaviour
 {
     [SerializeField] private float _shakeDuration = 1f;
     [SerializeField] private AnimationCurve _shakeCurve;
 
-    public UnityEvent Registered;
+    public event Action Registered;
 
     private void Awake()
     {
@@ -15,7 +16,7 @@ public class ScreenShake : MonoBehaviour
         {
             ServiceLocator.Register(this);
             DontDestroyOnLoad(this);
-            Registered.Invoke();
+            Registered?.Invoke();
         }
     }
 
