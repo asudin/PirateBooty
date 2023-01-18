@@ -161,6 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyData: {fileID: 11400000, guid: 7ad8ff9435d94ae46a50cd85c5e6a3ea, type: 2}
+  _variant:
+    Type: 1
 --- !u!114 &5852779629857474416
 MonoBehaviour:
   m_ObjectHideFlags: 0
