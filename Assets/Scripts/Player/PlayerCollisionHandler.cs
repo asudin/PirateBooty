@@ -4,13 +4,12 @@ using UnityEngine;
 public class PlayerCollisionHandler : MonoBehaviour
 {
     [SerializeField] private float _collisionShakeDuration;
+    [SerializeField] private ScreenShake _shaker;
 
     private Player _player;
-    private ScreenShake _shaker;
 
     private void OnEnable()
     {
-        _shaker = FindObjectOfType<ScreenShake>();
         _shaker.Registered += OnScreenShakeRegistered;
     }
 

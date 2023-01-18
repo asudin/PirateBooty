@@ -13341,6 +13341,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6958523295796572565, guid: 49277a9a880b6694580407baec460bc9, type: 3}
+      propertyPath: _shaker
+      value: 
+      objectReference: {fileID: 519420034}
+    - target: {fileID: 6958523295796572565, guid: 49277a9a880b6694580407baec460bc9, type: 3}
       propertyPath: _collisionShakeDuration
       value: 0.2
       objectReference: {fileID: 0}

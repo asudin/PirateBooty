@@ -19,7 +19,6 @@ public abstract class Weapon : MonoBehaviour
 
     private void OnEnable()
     {
-        _shaker = FindObjectOfType<ScreenShake>();
         _shaker.Registered += OnScreenShakeRegistered;
     }
 
@@ -31,6 +30,7 @@ public abstract class Weapon : MonoBehaviour
     private void Awake()
     {
         _soundManager = ServiceLocator.Get<SoundManager>();
+        _shaker = Camera.main.GetComponent<ScreenShake>();
     }
 
     private void OnScreenShakeRegistered()
