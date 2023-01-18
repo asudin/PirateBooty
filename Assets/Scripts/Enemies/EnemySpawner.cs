@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class EnemySpawner : ObjectPool<Enemy>
 {
@@ -19,7 +20,7 @@ public class EnemySpawner : ObjectPool<Enemy>
 
     private void FixedUpdate()
     {
-        SpawnEnemies(_enemySpawns);
+        StartCoroutine(SpawnEnemy(_enemySpawns));
     }
 
     private void CreateSpawn(ref Transform[] spawns, Transform spawnPoints)
@@ -32,18 +33,22 @@ public class EnemySpawner : ObjectPool<Enemy>
         }
     }
 
-    private void SpawnEnemies(Transform[] enemySpawns)
+    private IEnumerator SpawnEnemy(Transform[] enemySpawns)
     {
-        _elapsedTime += Time.deltaTime;
-
-        if (_elapsedTime >= _spawnInterval)
+        while (true)
         {
-            _elapsedTime = 0;
-            if (TryGetObjectInPool(out Enemy enemy))
+            _elapsedTime += Time.deltaTime;
+
+            if (_elapsedTime >= _spawnInterval)
             {
-                SetEnemy(enemy, RandomSpawnPosition(enemySpawns));
-                enemy.CollisionHandler.OnChestAreaEntered += OnChestAreaReached;
+                _elapsedTime = 0;
+                if (TryGetObjectInPool(out Enemy enemy))
+                {
+                    SetEnemy(enemy, RandomSpawnPosition(enemySpawns));
+                    enemy.CollisionHandler.OnChestAreaEntered += OnChestAreaReached;
+                }
             }
+            yield return new WaitForSeconds(_spawnInterval);
         }
     }
 

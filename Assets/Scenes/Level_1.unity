@@ -22447,7 +22447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _container: {fileID: 815206019}
-  _amount: 10
+  _amount: 20
   _spawnInterval: 2
   _enemySpawnPoints: {fileID: 1735734311}
   _enemyPrefabs:
