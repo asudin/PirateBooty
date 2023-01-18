@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy), typeof(CapsuleCollider2D))]
 public class EnemyCollisionHandler : MonoBehaviour
 {
     [SerializeField] private Enemy _enragedVariant;

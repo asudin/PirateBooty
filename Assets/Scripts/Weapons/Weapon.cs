@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] private WeaponData _weaponData;

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Player))]
 public class PlayerCollisionHandler : MonoBehaviour
 {
     [SerializeField] private float _collisionShakeDuration;
