@@ -22,7 +22,7 @@ public class MoveState : State
 
     private void FixedUpdate()
     {
-        _animator.SetFloat("Speed", Mathf.Abs(_speed));
+        _animator.SetFloat(AnimatorEnemyController.Params.Speed, Mathf.Abs(_speed));
         _rigidbody.velocity = new Vector2(_directionX * _speed, _rigidbody.velocity.y);
     }
 
@@ -51,4 +51,6 @@ public class MoveState : State
         if (collision.GetComponent<Wall>())
             _directionX *= xAxisDirection;
     }
+
+    private static class AnimatorEnemyController { public static class Params { public const string Speed = nameof(Speed); } }
 }
