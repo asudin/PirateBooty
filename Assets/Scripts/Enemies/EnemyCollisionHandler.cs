@@ -23,10 +23,15 @@ public class EnemyCollisionHandler : MonoBehaviour
     {
         if (collision.TryGetComponent(out Chest chest))
         {
-            gameObject.SetActive(false);
+            if (_enemy.Variant.Type == EnemyType.Enraged)
+                Destroy(gameObject);
+            else
+                gameObject.SetActive(false);
+
             _soundManager.Play(SoundManager.Sounds.ChestReached);
             OnChestAreaEntered?.Invoke(_enragedVariant, _enemy);
         }
+        
 
         if (collision.TryGetComponent(out Bullet bullet))
         {
