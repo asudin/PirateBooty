@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyCollisionHandler))]
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyData _enemyData;
