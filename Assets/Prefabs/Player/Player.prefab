@@ -5169,6 +5169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3e4c1918c2f50429a7191789f9dadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collisionShakeDuration: 0
+  _shaker: {fileID: 0}
 --- !u!1 &8679490597820618056
 GameObject:
   m_ObjectHideFlags: 0
@@ -5233,7 +5235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9135132446255607064, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9945219
+      value: 0.99984777
       objectReference: {fileID: 0}
     - target: {fileID: 9135132446255607064, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5245,7 +5247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9135132446255607064, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.10452846
+      value: 0.01745245
       objectReference: {fileID: 0}
     - target: {fileID: 9135132446255607064, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5257,7 +5259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9135132446255607064, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13af67cd6c500294f9213806074bd4a1, type: 3}

@@ -136,7 +136,7 @@ Animator:
   m_GameObject: {fileID: 1300471760403921196}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7bd9743fe1261ae49866cc0f67ce107f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -158,10 +158,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a530ba7b2d0d1b14fb90085d4382fc62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletRigidbody: {fileID: 0}
+  _bulletVariant:
+    Type: 2
   _damage: 1
   _speed: 8
   _animator: {fileID: -6005914374019038168}
-  _destroySound: {fileID: 1948300234277292003}
   destroyTimerDelay: 0.6
 --- !u!82 &1948300234277292003
 AudioSource:

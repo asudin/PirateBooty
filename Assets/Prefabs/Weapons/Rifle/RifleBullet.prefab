@@ -104,8 +104,6 @@ MonoBehaviour:
   _damage: 1
   _speed: 10
   _animator: {fileID: -6005914374019038168}
-  _destroySound: {fileID: 6669954926513575220}
-  destroyTimerDelay: 0.2
 --- !u!58 &3852019411581690250
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -153,7 +151,7 @@ Animator:
   m_GameObject: {fileID: 1300471760403921196}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7bd9743fe1261ae49866cc0f67ce107f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
